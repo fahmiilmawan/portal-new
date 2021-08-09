@@ -111,6 +111,19 @@
                         </ul>
                       </li>
 
+                      <li class="{{ (request()->is('adminsejarahsingkat') ? 'active' : '') }} {{ (request()->is('tambah-adminsejarahsingkat') ? 'active' : '') }}">
+                      <a class="nav-link has-dropdown" href=""><i class="fas fa-bullhorn"></i> 
+                        <span>Sejarah Singkat</span></a>
+                        <ul class="dropdown-menu">
+                          <li class="{{ (request()->is('adminsejarahsingkat') ? 'active' : '') }}">
+                            <a class="nav-link" href="/adminsejarahsingkat">List sejarahsingkat</a>
+                          </li>
+                          <li class="{{ (request()->is('tambah-adminsejarahsingkat') ? 'active' : '') }}">
+                            <a class="nav-link" href="/tambah-adminsejarahsingkat">Tambah sejarahsingkat</a>
+                          </li>
+                        </ul>
+                      </li>
+
                       <li class="active">
                         <a class="nav-link has-dropdown" href=""><i class="fas fa-cogs"></i> 
                           <span>Pengaturan lainnya</span></a>

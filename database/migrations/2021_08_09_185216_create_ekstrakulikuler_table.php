@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateVisiMisiTable extends Migration
+class CreateEkstrakulikulerTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CreateVisiMisiTable extends Migration
      */
     public function up()
     {
-        Schema::create('visi_misi', function (Blueprint $table) {
+        Schema::create('ekstrakulikuler', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('content');
+            $table->string('nama_ekstrakulikuler', 255);
+            $table->string('logo_ekstrakulikuler', 255, null);
+            $table->string('keterangan_ekstrakulikuler');
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ class CreateVisiMisiTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('visi_misi');
+        Schema::dropIfExists('ekstrakulikuler');
     }
 }

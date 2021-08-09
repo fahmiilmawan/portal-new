@@ -25,12 +25,17 @@
         <h2>SMK LPPM RI BANDUNG</h2>
         <img src="assets/img/foto2.jpg" alt="" class="img-fluid" width="600px"height="345px">
     </div>
+
+    @foreach ($showSejarahSingkat as $sejarahSingkat)
+        
+    
     <div class="kata">
-        <p><b>LPPM-RI </b> ( Lembaga Pendidikan & Pengetahuan Masyarakat -Republik Indonesia)
+        <p style="text-align: center"><b>LPPM-RI </b> ( Lembaga Pendidikan & Pengetahuan Masyarakat -Republik Indonesia)</p>
         <br>
         <br>
-Lembaga Pendidikan dan Pengetahuan Masyarakat Republik Indonesia (LPPM-RI), berdiri sejak tahun 1957 dan masuk dalam berita acara no 2009. Lembaga Pendidikan dan Pengetahuan Masyarakat Republik Indonesia (LPPM-RI) ini didirikan oleh Bpk.Purn.DR RMA Agung, beliau kelahiran Sigu Banda Aceh.LPPM-RI ini mendirikan SMP, SMA, SMK dan Perguruan Tinggi yang tersebar di seluruh Indonesia, seperti di Jakarta, Cilacap, Bandung, Majalaya, Batujajar, Padalarang, Sukabumi, Tasikmlaya, Garut, Parongpong dan cabang-cabang lainnya di Indonesia.LPPM-RI ini telah aktif membantu program pemerintah dalam rangka pemerataan pendidikan, khususnya bagi masyarakat yang kurang mampu sesuai dengan visi dan misi kami dan juga bagi yang memiliki cita-cita yang tinggi. </p>
+        <p>{{$sejarahSingkat->sejarah_singkat}}</p>
     </div>
+    @endforeach
     
     
 </div>
