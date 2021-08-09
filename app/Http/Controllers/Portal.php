@@ -14,6 +14,7 @@ use App\Models\User;
 use App\Models\Item;
 use App\Models\SejarahSingkat;
 use App\Models\Visimisi;
+use App\Models\KompetensiKeahlian;
 
 class Portal extends Controller
 {
@@ -274,4 +275,12 @@ class Portal extends Controller
         return view('profil.sejarah-singkat', compact('showSejarahSingkat'));
     }
     //END SEJARAH SINGKAT
+    
+    // KOMPETENSI KEAHLIAN
+    public function showKompetensiKeahlian()
+    {
+        $showKompetensiKeahlian = KompetensiKeahlian::all();
+        return view('profil.kompetensi-keahlian', compact('showKompetensiKeahlian');
+    }
+    //END KOMPETENSI KEAHLIAN
 }
