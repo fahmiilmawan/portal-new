@@ -31,23 +31,27 @@
         }
     </style>
 </head>
+
+@foreach($showKKRPL as $rpl)
+
 <div class="section-title" style="margin-top: 50px;padding-top:80px;">
-    <h2>REKAYASA PERANGKAT LUNAK</h2>
+    <h2>{{$rpl -> nama_jurusan}}</h2>
   </div>
- 
+
    
 <div class="container1" data-aos="fade-up" style="padding:50px;background-color:white;">
 
     
     <div class="foto" style="text-align:center;">
         <img src="assets/img/logo1.png" alt="" class="img-fluid" width="200px"height="50px">
-        <h2 >REKAYASA PERANGKAT LUNAK</h2>
-        <p style="text-align: justify;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. A est quo vitae, minus reiciendis eius ducimus cupiditate nostrum corporis animi voluptatum possimus quam? Vel harum mollitia cumque illo non. Obcaecati!</p>
+        <h2 >{{$rpl -> nama_jurusan}}</h2>
+        <p style="text-align: justify;">{{$rpl -> keterangan}}</p>
     </div>
     {{-- <a href="" class="btn btn-primary btn-lg">Prestasi Kompetensi</a>  --}}
 </div>
+
 <div class="section-title" style="margin-top: 50px;padding-top:80px;">
-  <h2>KEPALA PROGRAM <br> REKAYASA PERANGKAT LUNAK</h2>
+  <h2>KEPALA PROGRAM <br> {{$rpl -> nama_jurusan}}</h2>
   
 </div>
 <div class="container-fluid" data-aos="fade-up" style="border: 0px solid black;margin:0;margin-top:20px;text-align:center;">
@@ -58,8 +62,8 @@
       </div>
       <div class="col-sm-12 col-md-8">
         <div class="card-body" style="text-align:justify;">
-          <h5 class="card-title" style="text-align:center;">SAMBUTAN KEPALA PROGRAM <br> REKAYASA PERANGKAT LUNAK</h5>
-          <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur rerum quas maiores impedit iusto ipsa, unde maxime molestiae distinctio id pariatur deleniti error quae minus officiis? Tempore odit maxime voluptas. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error reprehenderit nostrum inventore laborum eius, mollitia aspernatur repudiandae explicabo repellendus doloribus ipsum quaerat officiis molestias? Pariatur amet accusamus tempore. Soluta, atque.</p>
+          <h5 class="card-title" style="text-align:center;">SAMBUTAN KEPALA PROGRAM <br> {{$rpl -> nama_jurusan}}</h5>
+          <p class="card-text">{{$rpl -> sambutan_kepala_jurusan}}</p>
         </div>
       </div>
     </div>
@@ -99,6 +103,8 @@
       </div>
     </div>
 <br>
+
+@endforeach 
 
 <br>
 </div>

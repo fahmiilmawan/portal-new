@@ -24,9 +24,15 @@ Route::get('/galery', [Portal::class, 'showGaleri']);
 Route::get('/visi-misi', [Portal::class, 'showVisiMisi']);
 Route::get('/sejarah-singkat', [Portal::class, 'showSejarahSingkat']);
 
-Route::get('/kompetensi-keahlian', function () {
-    return view('kompetensi-keahlian.kompetensi-keahlian');
-});
+//Route Kompetensi Keahlian USER
+Route::get('/kompetensi-keahlian', [Portal::class, 'indexKompetensiKeahlian']);
+Route::get('/rekayasa-perangkat-lunak', [Portal::class, 'showKompetensiKeahlianRPL']);
+Route::get('/bisnis_daring_pemasaran', [Portal::class, 'showKompetensiKeahlianBDP']);
+Route::get('/teknik_bisnis_sepeda_motor', [Portal::class, 'showKompetensiKeahlianTBSM']);
+Route::get('/teknik_kendaraan_ringan_otomotif', [Portal::class, 'showKompetensiKeahlianTKRO']);
+Route::get('/akuntansi', [Portal::class, 'showKompetensiKeahlianAK']);
+
+//END ROUTE KOMPETENSI KEAHLIAN USER
 Route::get('/guru-staf', function () {
     return view('guru-staf.guru-staf');
 });
@@ -130,19 +136,7 @@ Route::get('/detail-artikel/{slug}', [Article::class, 'detailArtikel']);
 Route::get('/guru-staff', function () {
     return view('profil.guru-staff');
 });
-//Routing Kompetensi-keahlian
-Route::get('/rekayasa-perangkat-lunak', function () {
-    return view('kompetensi-keahlian.rekayasa-perangkat-lunak');
-});
-Route::get('/pemasaran', function () {
-    return view('kompetensi-keahlian.pemasaran');
-});
-Route::get('/akuntansi', function () {
-    return view('kompetensi-keahlian.akuntansi');
-});
-Route::get('/teknik-sepeda-motor', function () {
-    return view('kompetensi-keahlian.teknik-sepeda-motor');
-});
+
 Route::get('/profil', function () {
     return view('profil.profil');
 });

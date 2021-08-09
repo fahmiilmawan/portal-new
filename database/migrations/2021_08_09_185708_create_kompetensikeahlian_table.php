@@ -16,8 +16,11 @@ class CreateKompetensikeahlianTable extends Migration
         Schema::create('kompetensikeahlian', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama_jurusan', 255);
-            $table->string('logo_jurusan', 255, null);
-            $table->text('keterangan', null);
+            $table->string('logo_jurusan', 255);
+            $table->text('keterangan');
+            $table->string('foto_kepala_jurusan', 255);
+            $table->text('sambutan_kepala_jurusan');
+            $table->string('foto_kegiatan_jurusan');
             $table->timestamps();
         });
     }

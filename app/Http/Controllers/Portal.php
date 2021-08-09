@@ -275,12 +275,48 @@ class Portal extends Controller
         return view('profil.sejarah-singkat', compact('showSejarahSingkat'));
     }
     //END SEJARAH SINGKAT
-    
+
     // KOMPETENSI KEAHLIAN
-    public function showKompetensiKeahlian()
+
+    public function indexKompetensiKeahlian()
     {
-        $showKompetensiKeahlian = KompetensiKeahlian::all();
-        return view('profil.kompetensi-keahlian', compact('showKompetensiKeahlian');
+        $showKKRPL = KompetensiKeahlian::where('id', 1)->get();
+        $showKKBDP = KompetensiKeahlian::where('id', 2)->get();
+        $showKKTBSM = KompetensiKeahlian::where('id', 3)->get();
+        $showKKAK = KompetensiKeahlian::where('id', 4)->get();
+        $showKKTKRO = KompetensiKeahlian::where('id', 5)->get();
+
+        return view('kompetensi-keahlian.kompetensi-keahlian', compact('showKKRPL', 'showKKBDP', 'showKKTBSM', 'showKKAK', 'showKKTKRO'));
+    }
+
+    public function showKompetensiKeahlianRPL()
+    {
+        $showKKRPL = KompetensiKeahlian::where('id', 1)->get();
+        return view('kompetensi-keahlian.rekayasa-perangkat-lunak', compact('showKKRPL'));
+    }
+
+    public function showKompetensiKeahlianBDP()
+    {
+        $showKKBDP = KompetensiKeahlian::where('id', 2)->get();
+        return view('kompetensi-keahlian.bisnis_daring_pemasaran', compact('showKKBDP'));
+    }
+
+    public function showKompetensiKeahlianTBSM()
+    {
+        $showKKTBSM = KompetensiKeahlian::where('id', 3)->get();
+        return view('kompetensi-keahlian.teknik_bisnis_sepeda_motor', compact('showKKTBSM'));
+    }
+
+    public function showKompetensiKeahlianAK()
+    {
+        $showKKAK = KompetensiKeahlian::where('id', 4)->get();
+        return view('kompetensi-keahlian.akuntansi', compact('showKKAK'));
+    }
+
+    public function showKompetensiKeahlianTKRO()
+    {
+        $showKKTKRO = KompetensiKeahlian::where('id', 5)->get();
+        return view('kompetensi-keahlian.teknik_kendaraan_ringan_otomotif', compact('showKKTKRO'));
     }
     //END KOMPETENSI KEAHLIAN
 }

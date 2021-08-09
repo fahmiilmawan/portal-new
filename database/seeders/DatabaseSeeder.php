@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
         $this->call(AdminUserSeeder::class);
         $this->call(VisiMisiSeeder::class);
         $this->call(SejarahSingkatSeeder::class);
+        $this->call(KompetensiKeahlianSeeder::class);
         // \App\Models\User::factory(10)->create();
     }
 }
