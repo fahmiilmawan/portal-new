@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Profil;
 
 use App\Http\Controllers\Controller;
+use App\Models\KompetensiKeahlian;
 use Illuminate\Http\Request;
 
 class KompetensiKeahlianController extends Controller
@@ -14,7 +15,8 @@ class KompetensiKeahlianController extends Controller
      */
     public function index()
     {
-        //
+        $showKompetensiKeahlian = KompetensiKeahlian::all();
+        return view('admin.adminkompetensikeahlian', compact('showKompetensiKeahlian'));
     }
 
     /**

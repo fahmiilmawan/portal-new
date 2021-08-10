@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Profil;
 
 use App\Http\Controllers\Controller;
+use App\Models\Ekstrakulikuler;
 use Illuminate\Http\Request;
 
 class EkstrakulikulerController extends Controller
@@ -14,7 +15,8 @@ class EkstrakulikulerController extends Controller
      */
     public function index()
     {
-        //
+        $showAdminEkstrakuliker = Ekstrakulikuler::all();
+        return view('admin.adminekstrakulikuler', compact('showAdminEkstrakuliker'));
     }
 
     /**

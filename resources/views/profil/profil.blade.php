@@ -16,6 +16,9 @@
       }
   </style>
 </head>
+
+@foreach( $showSejarahSingkat as $ss)
+
 <div class="section-title" style="margin-top: 50px;padding-top:80px;" data-aos="fade-up">
     <h2>PROFIL SEKOLAH</h2>
   </div>
@@ -28,12 +31,14 @@
         <div class="card-body">
           <p class="card-text" style="text-align: justify;"><b>LPPM-RI </b> ( Lembaga Pendidikan & Pengetahuan Masyarakat -Republik Indonesia)
         <br>
-        <br>
-Lembaga Pendidikan dan Pengetahuan Masyarakat Republik Indonesia (LPPM-RI), berdiri sejak tahun 1957 dan masuk dalam berita acara no 2009. Lembaga Pendidikan dan Pengetahuan Masyarakat Republik Indonesia (LPPM-RI) ini didirikan oleh Bpk.Purn.DR RMA Agung, beliau kelahiran Sigu Banda Aceh.LPPM-RI ini mendirikan SMP, SMA, SMK dan Perguruan Tinggi yang tersebar di seluruh Indonesia, seperti di Jakarta, Cilacap, Bandung, Majalaya, Batujajar, Padalarang, Sukabumi, Tasikmlaya, Garut, Parongpong dan cabang-cabang lainnya di Indonesia.LPPM-RI ini telah aktif membantu program pemerintah dalam rangka pemerataan pendidikan, khususnya bagi masyarakat yang kurang mampu sesuai dengan visi dan misi kami dan juga bagi yang memiliki cita-cita yang tinggi. .</p>
+        <br> {{$ss -> sejarah_singkat}}</p>
           <a href="/sejarah-singkat" class="btn btn-primary" style="text-align: left;">Lihat Selengkapnya</a>
         </div>
       </div>
     </div>
+
+@endforeach
+
     <div class="row" style="padding:25px;"data-aos="fade-up">
       <div class="col-md-6">
       <div class="card" >

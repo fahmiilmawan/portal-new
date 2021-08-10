@@ -6,8 +6,12 @@ use App\Http\Controllers\Article\Article;
 use App\Http\Controllers\Gallery\Galeri;
 use App\Http\Controllers\Pengunguman\Pengunguman;
 use App\Http\Controllers\Auth\Auth;
+use App\Http\Controllers\Profil\EkstrakulikulerController;
+use App\Http\Controllers\Profil\GuruController;
+use App\Http\Controllers\Profil\KompetensiKeahlianController;
 use App\Http\Controllers\Profil\SejarahSingkatController;
 use App\Http\Controllers\Profil\VisiMisiController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,6 +25,9 @@ use App\Http\Controllers\Profil\VisiMisiController;
 // Route utama
 Route::get('/', [Portal::class, 'index']);
 Route::get('/galery', [Portal::class, 'showGaleri']);
+
+//ROUTE PROFIL
+Route::get('/profilsekolah', [Portal::class, 'indexProfilSekolah']);
 Route::get('/visi-misi', [Portal::class, 'showVisiMisi']);
 Route::get('/sejarah-singkat', [Portal::class, 'showSejarahSingkat']);
 
@@ -31,8 +38,9 @@ Route::get('/bisnis_daring_pemasaran', [Portal::class, 'showKompetensiKeahlianBD
 Route::get('/teknik_bisnis_sepeda_motor', [Portal::class, 'showKompetensiKeahlianTBSM']);
 Route::get('/teknik_kendaraan_ringan_otomotif', [Portal::class, 'showKompetensiKeahlianTKRO']);
 Route::get('/akuntansi', [Portal::class, 'showKompetensiKeahlianAK']);
-
 //END ROUTE KOMPETENSI KEAHLIAN USER
+//END ROUTE PROFIL
+
 Route::get('/guru-staf', function () {
     return view('guru-staf.guru-staf');
 });
@@ -58,8 +66,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/tags', [Portal::class, 'tags']);
     Route::get('/foto', [Galeri::class, 'foto']);
     Route::get('/pengunguman', [Pengunguman::class, 'show']);
-    Route::get('/adminsejarahsingkat', [SejarahSingkatController::class, 'index']);
-    Route::put('/adminsejarahsingkat/{id}', [SejarahSingkatController::class, 'update']);
+
 
 
     Route::get('/logout', [Auth::class, 'logout'])->name('logout');
@@ -111,13 +118,20 @@ Route::group(['middleware' => 'auth'], function () {
     // end
     // 
 
+    //PROFIL SEKOLAH
+    Route::get('/adminkompetensikeahlian', [KompetensiKeahlianController::class, 'index']);
+    Route::get('/admingurustaff', [GuruController::class, 'index']);
+    Route::get('/adminekstrakulikuler', [EkstrakulikulerController::class, 'index']);
+    Route::get('/adminsejarahsingkat', [SejarahSingkatController::class, 'index']);
+    Route::put('/adminsejarahsingkat/{id}', [SejarahSingkatController::class, 'update']);
+    Route::get('/pengaturan-visimisi', [VisiMisiController::class, 'showAdminVisiMisi']);
+    Route::put('/pengaturan-visimisi/{id}', [VisiMisiController::class, 'updateAdminVisiMisi']);
+    //END PROFIL SEKOLAH
+
     // pengaturan lain
-    // 
     Route::get('/pengaturan-carousel', [Portal::class, 'carouselSetting']);
     Route::put('/pengaturan-carousel-update/{id}', [Portal::class, 'updateCarousel']);
 
-    Route::get('/pengaturan-visimisi', [VisiMisiController::class, 'showAdminVisiMisi']);
-    Route::put('/pengaturan-visimisi/{id}', [VisiMisiController::class, 'updateAdminVisiMisi']);
     // CK Editor
     Route::post('/test/Ck', [Portal::class, 'upload'])->name('ckeditor.upload');
 });
@@ -135,10 +149,6 @@ Route::get('/detail-artikel/{slug}', [Article::class, 'detailArtikel']);
 
 Route::get('/guru-staff', function () {
     return view('profil.guru-staff');
-});
-
-Route::get('/profil', function () {
-    return view('profil.profil');
 });
 
 // ROUTING EKSTRAKULER

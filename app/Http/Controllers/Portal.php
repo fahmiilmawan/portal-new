@@ -4,17 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
 use App\Models\Post;
-use App\Models\Blog;
 use App\Models\Category;
 use App\Models\Gallery;
 use App\Models\Announce;
-use App\Models\User;
+use App\Models\Guru;
 use App\Models\Item;
 use App\Models\SejarahSingkat;
 use App\Models\Visimisi;
 use App\Models\KompetensiKeahlian;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class Portal extends Controller
 {
@@ -260,6 +259,17 @@ class Portal extends Controller
         return redirect()->back()->with('success', 'Foto berhasil diubah');
     }
 
+    //PROFIL SEKOLAH
+    public function indexProfilSekolah()
+    {
+        $showSejarahSingkat = SejarahSingkat::all('sejarah_singkat');
+        $showVisiMisi = Visimisi::all();
+        $showGuru = Guru::all();
+
+        return view('profil.profil', compact('showSejarahSingkat', 'showVisiMisi', 'showGuru'));
+    }
+    //END PROFIL SEKOLAH
+
     // VISI - MISI
     public function showVisiMisi()
     {
@@ -269,6 +279,7 @@ class Portal extends Controller
     //END VISI MISI
 
     // SEJARAH SINGKAT
+
     public function showSejarahSingkat()
     {
         $showSejarahSingkat = SejarahSingkat::all('sejarah_singkat');

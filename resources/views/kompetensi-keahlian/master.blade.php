@@ -52,7 +52,7 @@
       <nav class="nav-menu d-none d-lg-block">
         <ul>
           <li class=""><a href="/">Beranda</a></li>
-          <li class="drop-down"><a href="/profil">Profil Sekolah</a>
+          <li class="drop-down"><a href="/profilsekolah">Profil Sekolah</a>
             <ul>
               <li><a href="/sejarah-singkat">Sejarah Singkat</a></li>
               <li><a href="/visi-misi">Visi & Misi</a></li>

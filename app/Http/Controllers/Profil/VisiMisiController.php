@@ -15,7 +15,6 @@ class VisiMisiController extends Controller
     }
     public function updateAdminVisiMisi(Request $request, $id)
     {
-        $VisiMisiController = $request->visi_misi;
         $form = Visimisi::find($id);
         $form->content = $request->content;
         $form->save();
