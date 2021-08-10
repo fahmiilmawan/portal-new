@@ -8,6 +8,7 @@ use App\Models\Post;
 use App\Models\Category;
 use App\Models\Gallery;
 use App\Models\Announce;
+use App\Models\Carousel;
 use App\Models\Guru;
 use App\Models\Item;
 use App\Models\SejarahSingkat;
@@ -24,11 +25,9 @@ class Portal extends Controller
         // $artikel = DB::table('posts')->orderBy('id', 'desc')->get();
         $artikel    = Post::latest()->take(4)->where('status', 'PUBLISH')->get();
         $announce   = Announce::latest()->take(1)->where('status', 'PUBLISH')->get();
-        $carousel   = Item::orderby('id', 'desc')->where('id', 1)->first();
-        $carousel_  = Item::orderby('id', 'desc')->where('id', 2)->first();
-
-
-        return view('index', compact('artikel', 'announce', 'carousel', 'carousel_'));
+        $carousel1 = Carousel::where('id', 1)->get();
+        $carousel2 = Carousel::where('id', 2)->get();
+        return view('index', compact('artikel', 'announce', 'carousel1', 'carousel2'));
     }
 
     public function showAdmin()
@@ -225,38 +224,6 @@ class Portal extends Controller
             @header('Content-type: text/html; charset=utf-8');
             echo $response;
         }
-    }
-
-    public function carouselSetting()
-    {
-
-        $carousel = Item::orderby('id', 'desc')->where('title', 'Carousel')->get();
-
-
-        return view('content.carouselsetting', compact('carousel'));
-    }
-
-    public function updateCarousel(Request $request, $id)
-    {
-
-        $request->validate([
-            'carousel' => 'required|image'
-        ]);
-
-        $delete = Item::all()->where('id', $id)->first();
-        $image_path = public_path() . '/assets/img/' . $delete->content;
-        unlink($image_path);
-
-        $img = $request->carousel->getClientOriginalName() . '-' . time() . '.' . $request->carousel->extension();
-
-        $request->carousel->move(public_path('assets/img'), $img);
-
-        $content = Item::find($id);
-        $content->content = $img;
-
-        $content->save();
-
-        return redirect()->back()->with('success', 'Foto berhasil diubah');
     }
 
     //PROFIL SEKOLAH

@@ -6,6 +6,7 @@ use App\Http\Controllers\Article\Article;
 use App\Http\Controllers\Gallery\Galeri;
 use App\Http\Controllers\Pengunguman\Pengunguman;
 use App\Http\Controllers\Auth\Auth;
+use App\Http\Controllers\Index\CarouselController;
 use App\Http\Controllers\Profil\EkstrakulikulerController;
 use App\Http\Controllers\Profil\GuruController;
 use App\Http\Controllers\Profil\KompetensiKeahlianController;
@@ -116,7 +117,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/artikel/{id}/delete-article', [Article::class, 'deleteArticle']);
     Route::get('/pengunguman/{id}/delete-pengunguman', [Pengunguman::class, 'deletePengunguman']);
     // end
-    // 
+    //
+
+    //INDEX HALAMAN DEPAN ADMIN
+    Route::get('/admincarousel', [CarouselController::class, 'index']);
+    //END INDEX HALAMAN DEPAN
 
     //PROFIL SEKOLAH
     Route::get('/adminkompetensikeahlian', [KompetensiKeahlianController::class, 'index']);
@@ -143,14 +148,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('/pengaturan-visimisi/{id}', [VisiMisiController::class, 'updateAdminVisiMisi']);
     //END PROFIL SEKOLAH
 
-    // pengaturan lain
-    Route::get('/pengaturan-carousel', [Portal::class, 'carouselSetting']);
-    Route::put('/pengaturan-carousel-update/{id}', [Portal::class, 'updateCarousel']);
 
     // CK Editor
     Route::post('/test/Ck', [Portal::class, 'upload'])->name('ckeditor.upload');
 });
-
 
 // Login
 Route::get('/login', [Portal::class, 'login'])->name('login');

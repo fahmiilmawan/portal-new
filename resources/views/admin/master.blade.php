@@ -64,6 +64,10 @@
                   <a class="nav-link" href="/main"><i class="fas fa-fire"></i> 
                     <span>Dashboard</span></a>
                   </li>
+                  <li class="{{ (request()->is('carousel') ? 'active' : '') }}">
+                  <a class="nav-link" href="/admincarousel"><i class="fas fa-fire"></i> 
+                    <span>Carousel</span></a>
+                  </li>
                 <li class="nav-item dropdown {{ (request()->is('artikel') ? 'active' : '') }} {{ (request()->is('tambah-artikel') ? 'active' : '') }}">
                   <a class="nav-link has-dropdown" href=""><i class="far fa-file-alt"></i> 
                     <span>Artikel</span></a>
@@ -132,17 +136,6 @@
                             </li>
                           </ul>
                         </li>   
-
-                      <li class="active">
-                        <a class="nav-link has-dropdown" href=""><i class="fas fa-cogs"></i> 
-                          <span>Pengaturan lainnya</span></a>
-                          <ul class="dropdown-menu">
-                            <li class="{{ (request()->is('pengaturan-carousel') ? 'active' : '') }}">
-                              <a class="nav-link" href="/pengaturan-carousel">Pengaturan Carousel</a>
-                            </li>
-                            
-                          </ul>
-                        </li>
 
               <li class="menu-header">Galeri</li>
                 <li class="{{ (request()->is('foto') ? 'active' : '') }} {{ (request()->is('tambah-foto') ? 'active' : '') }}">

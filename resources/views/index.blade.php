@@ -163,24 +163,30 @@
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
     </ol>
+    @foreach ($carousel1 as $a) 
     <div class="carousel-inner">
       <div class="carousel-item active" data-interval="5000">
         {{-- <div class="overlay-image"style="background-image: url('assets/img/{{$carousel->content}}');">
         
         </div> --}}
+         
         <div class="container-carousel">
           <img src="assets/img/lppm_ri.png" class="img-fluid" width="150px"alt="" style="padding-bottom:25px;" data-aos="fade-up">
-        <h2 style="font-size: 50px;" data-aos="fade-up">SELAMAT DATANG DI SMK LPPM RI</h2>
+        <h2 style="font-size: 50px;" data-aos="fade-up">{{$a->caption}}</h2>   
     </div>
+     @endforeach
   </div>
+  @foreach ($carousel2 as $a)
     <div class="carousel-item">
       {{-- <div class="overlay-image"style="background-image: url('assets/img/{{$carousel_->content}}');">
         
       </div> --}}
+      
       <div class="container-carousel">
         <img src="assets/img/lppm_ri.png" class="img-fluid" width="150px"alt="" style="padding-bottom:25px;" data-aos="fade-up"> 
-      <h2 style="font-size: 50px;" data-aos="fade-up">SEKOLAH TERBAIK DI BANDUNG</h2>
+      <h2 style="font-size: 50px;" data-aos="fade-up">{{$a->caption}}</h2>
     </div>
+  @endforeach
   </div>
 </div>
   <a href="#myCarousel" class="carousel-control-prev" role="button" data-slide="prev">
