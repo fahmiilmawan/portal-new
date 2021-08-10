@@ -17,6 +17,8 @@ class DatabaseSeeder extends Seeder
         $this->call(VisiMisiSeeder::class);
         $this->call(SejarahSingkatSeeder::class);
         $this->call(KompetensiKeahlianSeeder::class);
+        $this->call(GuruStaffSeeder::class);
+        $this->call(EkstrakurikulerSeeder::class);
         // \App\Models\User::factory(10)->create();
     }
 }

@@ -26,7 +26,8 @@ class EkstrakulikulerController extends Controller
      */
     public function create()
     {
-        //
+        $tambahEkstrakulikuler = Ekstrakulikuler::all();
+        return view('content.addadminekstrakulikuler', compact('tambahEkstrakulikuler'));
     }
 
     /**
@@ -59,7 +60,9 @@ class EkstrakulikulerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $editAdminEkstrakulikuler = Ekstrakulikuler::find($id);
+
+        return view('content.editadminekstrakulikuler', compact('editAdminEkstrakulikuler'));
     }
 
     /**
@@ -82,6 +85,10 @@ class EkstrakulikulerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $hapus      = Ekstrakulikuler::where('id', $id);
+
+        $hapus->delete();
+
+        return redirect()->back()->with('delete', 'Ekstrakulikuler berhasil dihapus');
     }
 }

@@ -15,8 +15,8 @@ class GuruController extends Controller
      */
     public function index()
     {
-        $showAdminGuru = Guru::all();
-        return view('admin.admingurustaff', compact('showAdminGuru'));
+        $showAdminGuruStaff = Guru::all();
+        return view('admin.admingurustaff', compact('showAdminGuruStaff'));
     }
 
     /**
@@ -26,7 +26,8 @@ class GuruController extends Controller
      */
     public function create()
     {
-        //
+        $tambahAdminGuruStaff = Guru::all();
+        return view('content.addadmingurustaff', compact('tambahAdminGuruStaff'));
     }
 
     /**
@@ -59,7 +60,9 @@ class GuruController extends Controller
      */
     public function edit($id)
     {
-        //
+        $editAdminGuruStaff = Guru::find($id);
+
+        return view('content.editadmingurustaff', compact('editAdminGuruStaff'));
     }
 
     /**
@@ -82,6 +85,10 @@ class GuruController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $hapus      = Guru::where('id', $id);
+
+        $hapus->delete();
+
+        return redirect()->back()->with('delete', 'Guru berhasil dihapus');
     }
 }

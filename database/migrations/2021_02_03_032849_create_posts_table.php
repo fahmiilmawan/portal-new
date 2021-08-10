@@ -17,6 +17,7 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->string('category', 75);
             $table->string('title', 75);
+            $table->string('author', 75);
             $table->string('slug', 100)->unique();
             $table->string('thumbnail', 100);
             $table->string('deskripsi', 140);

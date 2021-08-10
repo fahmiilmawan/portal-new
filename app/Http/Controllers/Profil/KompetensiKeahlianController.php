@@ -59,7 +59,9 @@ class KompetensiKeahlianController extends Controller
      */
     public function edit($id)
     {
-        //
+        $editAdminKompetensiKeahlian = KompetensiKeahlian::find($id);
+
+        return view('content.editadminkompetensikeahlian', compact('editAdminKompetensiKeahlian'));
     }
 
     /**

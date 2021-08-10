@@ -15,11 +15,12 @@ class CreateGuruTable extends Migration
     {
         Schema::create('guru', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('nip_guru', null);
+            $table->integer('nip_guru');
             $table->string('nama_guru');
+            $table->string('foto_guru', 255);
             $table->string('jabatan_guru'); //jabatan termasuk staff dan guru mapel
             $table->string('mapel_diampu_guru', 255, null);
-            $table->string('jenis_kelamin_guru', 2, null);
+            $table->string('jenis_kelamin_guru', 100, null);
             $table->text('biodata_guru');
             $table->timestamps();
         });

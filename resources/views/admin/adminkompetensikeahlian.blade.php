@@ -13,34 +13,31 @@
           <th scope="col">Nama Jurusan</th>
           <th scope="col">Logo</th>
           <th scope="col">Keterangan</th>
-          <th scope="col">Gambar Kepala Jurusan</th>
+          <th scope="col">Foto Kepala Jurusan</th>
           <th scope="col">Sambutan Kepala Jurusan</th>
+          <th scope="col">Foto Kegiatan Jurusan</th>
           <th scope="col">Aksi</th>
         </tr>
       </thead>
       <tbody>
-        {{-- @foreach($ as $ ) --}}
+        @foreach($showKompetensiKeahlian as $i => $a)
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>{{ ++$i }}</td>
+            <td>{{ $a->nama_jurusan }}</td>
+            <td>{{ $a->logo_jurusan }}</td>
+            <td>{{ $a->keterangan }}</td>
+            <td>{{ $a->foto_kepala_jurusan }}</td>
+            <td>{{ $a->sambutan_kepala_jurusan }}</td>
+            <td>{{ $a->foto_kegiatan_jurusan }}</td>       
             <td>
-              <a href="">
+              <a href="/adminkompetensikeahlian/{{$a->id}}/editadminkompetensikeahlian">
                 <button class="btn btn-success">
                   <i class="fas fa-pen"></i>
                 </button>
               </a>
-              <a href="">
-                <button class="btn btn-danger">
-                  <i class="fas fa-trash"></i>
-                </button>
-              </a>
             </td>
           </tr>
-        {{-- @endforeach --}}
+        @endforeach
       </tbody>
     </table>
     
