@@ -10,4 +10,9 @@ class Ekstrakulikuler extends Model
     use HasFactory;
 
     protected $table = 'ekstrakulikuler';
+    protected $fillable = [
+        'nama_ekstrakulikuler',
+        'logo_ekstrakulikuler',
+        'keterangan_ekstrakulikuler'
+    ];
 }

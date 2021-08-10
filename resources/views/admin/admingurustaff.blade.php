@@ -47,18 +47,20 @@
           <tr>
             <td>{{ $a->nip_guru }}</td>
             <td>{{ $a->nama_guru }}</td>
-            <td>{{ $a->foto_guru }}</td>
+            <td>
+              <img src="{{ asset('assets/img/gurustaff/'.$a->foto_guru) }}" width="70px" height="70px" alt="Image">    
+            </td>
             <td>{{ $a->jabatan_guru }}</td>
             <td>{{ $a->mapel_diampu_guru }}</td>
             <td>{{ $a->jenis_kelamin_guru }}</td>
             <td>{{ $a->biodata_guru }}</td>
             <td>
-              <a href="/admingurutaff/{{$a->id}}/editadmingurustaff">
+              <a href="/admingurustaff/{{$a->id}}/editadmingurustaff">
                 <button class="btn btn-success">
                   <i class="fas fa-pen"></i>
                 </button>
               </a>
-              <a href="/admingurutaff/{{$a->id}}/deleteadmingurustaff">
+              <a href="/admingurustaff/{{$a->id}}/deleteadmingurustaff">
                 <button class="btn btn-danger">
                   <i class="fas fa-trash"></i>
                 </button>

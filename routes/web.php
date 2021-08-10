@@ -11,7 +11,6 @@ use App\Http\Controllers\Profil\GuruController;
 use App\Http\Controllers\Profil\KompetensiKeahlianController;
 use App\Http\Controllers\Profil\SejarahSingkatController;
 use App\Http\Controllers\Profil\VisiMisiController;
-use App\Models\KompetensiKeahlian;
 
 /*
 |--------------------------------------------------------------------------
@@ -98,7 +97,7 @@ Route::group(['middleware' => 'auth'], function () {
     // 
     // edit process
     Route::get('/artikel/{id}/edit-article', [Article::class, 'editArticle']);
-    Route::put('artikel/{id}', [Article::class, 'updateProcess']);
+    Route::put('/artikel/{id}', [Article::class, 'updateProcess']);
 
     Route::get('/tags/{id}/edit-tags', [Portal::class, 'editTags']);
     Route::put('/tags/{id}', [Portal::class, 'updateTags']);
@@ -122,16 +121,24 @@ Route::group(['middleware' => 'auth'], function () {
     //PROFIL SEKOLAH
     Route::get('/adminkompetensikeahlian', [KompetensiKeahlianController::class, 'index']);
     Route::get('/adminkompetensikeahlian/{id}/editadminkompetensikeahlian', [KompetensiKeahlianController::class, 'edit']);
+
     Route::get('/admingurustaff', [GuruController::class, 'index']);
     Route::get('/tambahadmingurustaff', [GuruController::class, 'create']);
-    Route::get('/admingurutaff/{id}/editadmingurustaff', [GuruController::class, 'edit']);
-    Route::get('/admingurutaff/{id}/deleteadmingurustaff', [GuruController::class, 'destroy']);
+    Route::post('/tambahadmingurustaff', [GuruController::class, 'store']);
+    Route::get('/admingurustaff/{id}/editadmingurustaff', [GuruController::class, 'edit']);
+    Route::put('/admingurustaff/{id}', [GuruController::class, 'update']);
+    Route::get('/admingurustaff/{id}/deleteadmingurustaff', [GuruController::class, 'destroy']);
+
     Route::get('/adminekstrakulikuler', [EkstrakulikulerController::class, 'index']);
     Route::get('/tambahadminekstrakulikuler', [EkstrakulikulerController::class, 'create']);
+    Route::post('/tambahadminekstrakulikuler', [EkstrakulikulerController::class, 'store']);
     Route::get('/adminekstrakulikuler/{id}/editadminadminekstrakulikuler', [EkstrakulikulerController::class, 'edit']);
+    Route::put('/adminekstrakulikuler/{id}', [EkstrakulikulerController::class, 'update']);
     Route::get('/adminekstrakulikuler/{id}/deleteadminadminekstrakulikuler', [EkstrakulikulerController::class, 'destroy']);
+
     Route::get('/adminsejarahsingkat', [SejarahSingkatController::class, 'index']);
     Route::put('/adminsejarahsingkat/{id}', [SejarahSingkatController::class, 'update']);
+
     Route::get('/pengaturan-visimisi', [VisiMisiController::class, 'showAdminVisiMisi']);
     Route::put('/pengaturan-visimisi/{id}', [VisiMisiController::class, 'updateAdminVisiMisi']);
     //END PROFIL SEKOLAH

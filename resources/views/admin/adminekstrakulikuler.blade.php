@@ -43,7 +43,9 @@
           <tr>
             <td>{{ ++$i }}</td>
             <td>{{ $a->nama_ekstrakulikuler }}</td>
-            <td>{{ $a->logo_ekstrakulikuler }}</td>
+            <td>
+              <img src="{{ asset('assets/img/ekstrakulikuler/'.$a->logo_ekstrakulikuler) }}" width="70px" height="70px" alt="Image">    
+            </td>
             <td>{{ $a->keterangan_ekstrakulikuler}}</td>
             <td>
               <a href="/adminekstrakulikuler/{{$a->id}}/editadminadminekstrakulikuler">

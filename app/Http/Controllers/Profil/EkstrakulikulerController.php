@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Profil;
 use App\Http\Controllers\Controller;
 use App\Models\Ekstrakulikuler;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+
 
 class EkstrakulikulerController extends Controller
 {
@@ -38,7 +40,20 @@ class EkstrakulikulerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $storeAdmEks = new Ekstrakulikuler();
+        $storeAdmEks->nama_ekstrakulikuler = $request->nama_ekstrakulikuler;
+        $storeAdmEks->keterangan_ekstrakulikuler = $request->keterangan_ekstrakulikuler;
+
+        if ($request->hasFile('logo_ekstrakulikuler')) {
+            $file = $request->file('logo_ekstrakulikuler');
+            $extention = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extention;
+            $file->move('assets\img\ekstrakulikuler', $filename);
+            $storeAdmEks->logo_ekstrakulikuler = $filename;
+        }
+
+        $storeAdmEks->save();
+        return redirect('/adminekstrakulikuler')->with('status', 'Ekstrakulikuler Berhasil Ditambahkan');
     }
 
     /**
@@ -74,7 +89,27 @@ class EkstrakulikulerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $storeAdmEks = Ekstrakulikuler::find($id);
+        $storeAdmEks->nama_ekstrakulikuler = $request->nama_ekstrakulikuler;
+        $storeAdmEks->keterangan_ekstrakulikuler = $request->keterangan_ekstrakulikuler;
+
+        if ($request->hasFile('logo_ekstrakulikuler')) {
+
+            $destination = 'assets\img\ekstrakulikuler' . $storeAdmEks->logo_ekstrakulikuler;
+
+            if (File::exists($destination)) {
+                File::delete($destination);
+            }
+
+            $file = $request->file('logo_ekstrakulikuler');
+            $extention = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extention;
+            $file->move('assets\img\ekstrakulikuler', $filename);
+            $storeAdmEks->logo_ekstrakulikuler = $filename;
+        }
+
+        $storeAdmEks->update();
+        return redirect('/adminekstrakulikuler')->with('status', 'Ekstrakulikuler Berhasil Diubah');
     }
 
     /**
@@ -86,9 +121,7 @@ class EkstrakulikulerController extends Controller
     public function destroy($id)
     {
         $hapus      = Ekstrakulikuler::where('id', $id);
-
         $hapus->delete();
-
         return redirect()->back()->with('delete', 'Ekstrakulikuler berhasil dihapus');
     }
 }
