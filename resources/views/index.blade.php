@@ -166,9 +166,9 @@
     @foreach ($carousel1 as $a) 
     <div class="carousel-inner">
       <div class="carousel-item active" data-interval="5000">
-        {{-- <div class="overlay-image"style="background-image: url('assets/img/{{$carousel->content}}');">
+        <div class="overlay-image"style="background-image: url('assets/img/carousel{{$a->gambar}}');">
         
-        </div> --}}
+        </div>
          
         <div class="container-carousel">
           <img src="{{ asset('assets/img/carousel/'.$a->gambar) }}" class="img-fluid" width="150px"alt="" style="padding-bottom:25px;" data-aos="fade-up">

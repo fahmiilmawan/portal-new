@@ -47,14 +47,9 @@
                     <img src="{{ asset('assets/img/carousel/'.$d->gambar) }}" width="70px" height="70px" alt="Image">    
                  </td>
                 <td>
-                  <a href="">
+                  <a href="/admincarousel/{{$d->id}}/editadmincarousel">
                     <button class="btn btn-success">
                       <i class="fas fa-pen"></i>
-                    </button>
-                  </a>
-                  <a href="">
-                    <button class="btn btn-danger">
-                      <i class="fas fa-trash"></i>
                     </button>
                   </a>
                 </td>

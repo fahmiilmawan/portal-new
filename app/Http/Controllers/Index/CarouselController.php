@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Index;
 use App\Http\Controllers\Controller;
 use App\Models\Carousel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class CarouselController extends Controller
 {
@@ -72,7 +73,9 @@ class CarouselController extends Controller
      */
     public function edit($id)
     {
-        //
+        $editAdminCarousel = Carousel::find($id);
+
+        return view('content.editadmincarousel', compact('editAdminCarousel'));
     }
 
     /**
@@ -84,7 +87,26 @@ class CarouselController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $storeAdmCrs = Carousel::find($id);
+        $storeAdmCrs->caption = $request->caption;
+
+        if ($request->hasFile('gambar')) {
+
+            $destination = 'assets\img\carousel' . $storeAdmCrs->gambar;
+
+            if (File::exists($destination)) {
+                File::delete($destination);
+            }
+
+            $file = $request->file('gambar');
+            $extention = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extention;
+            $file->move('assets\img\carousel', $filename);
+            $storeAdmCrs->gambar = $filename;
+        }
+
+        $storeAdmCrs->update();
+        return redirect('/admincarousel')->with('status', 'Carousel Berhasil Diubah');
     }
 
     /**

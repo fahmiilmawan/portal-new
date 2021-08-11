@@ -12,6 +12,7 @@ use App\Http\Controllers\Profil\GuruController;
 use App\Http\Controllers\Profil\KompetensiKeahlianController;
 use App\Http\Controllers\Profil\SejarahSingkatController;
 use App\Http\Controllers\Profil\VisiMisiController;
+use App\Models\Carousel;
 
 /*
 |--------------------------------------------------------------------------
@@ -123,6 +124,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/admincarousel', [CarouselController::class, 'index']);
     Route::get('/tambahadmincarousel', [CarouselController::class, 'create']);
     Route::post('/tambahadmincarousel', [CarouselController::class, 'store']);
+    Route::get('/admincarousel/{id}/editadmincarousel', [CarouselController::class, 'edit']);
+    Route::put('/admincarousel/{id}', [CarouselController::class, 'update']);
     //END INDEX HALAMAN DEPAN
 
     //PROFIL SEKOLAH
