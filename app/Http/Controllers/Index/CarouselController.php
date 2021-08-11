@@ -26,7 +26,8 @@ class CarouselController extends Controller
      */
     public function create()
     {
-        //
+        $tambahAdminCarousel = Carousel::all();
+        return view('content.addadmincarousel', compact('tambahAdminCarousel'));
     }
 
     /**
@@ -37,7 +38,19 @@ class CarouselController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $storeAdmCrl = new Carousel();
+        $storeAdmCrl->caption = $request->caption;
+
+        if ($request->hasFile('gambar')) {
+            $file = $request->file('gambar');
+            $extention = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extention;
+            $file->move('assets\img\carousel', $filename);
+            $storeAdmCrl->gambar = $filename;
+        }
+
+        $storeAdmCrl->save();
+        return redirect('/admincarousel')->with('status', 'Carousel Berhasil Ditambahkan');
     }
 
     /**

@@ -121,6 +121,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     //INDEX HALAMAN DEPAN ADMIN
     Route::get('/admincarousel', [CarouselController::class, 'index']);
+    Route::get('/tambahadmincarousel', [CarouselController::class, 'create']);
+    Route::post('/tambahadmincarousel', [CarouselController::class, 'store']);
     //END INDEX HALAMAN DEPAN
 
     //PROFIL SEKOLAH

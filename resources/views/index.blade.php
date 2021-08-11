@@ -171,7 +171,7 @@
         </div> --}}
          
         <div class="container-carousel">
-          <img src="assets/img/lppm_ri.png" class="img-fluid" width="150px"alt="" style="padding-bottom:25px;" data-aos="fade-up">
+          <img src="{{ asset('assets/img/carousel/'.$a->gambar) }}" class="img-fluid" width="150px"alt="" style="padding-bottom:25px;" data-aos="fade-up">
         <h2 style="font-size: 50px;" data-aos="fade-up">{{$a->caption}}</h2>   
     </div>
      @endforeach
@@ -183,7 +183,7 @@
       </div> --}}
       
       <div class="container-carousel">
-        <img src="assets/img/lppm_ri.png" class="img-fluid" width="150px"alt="" style="padding-bottom:25px;" data-aos="fade-up"> 
+        <img src="{{ asset('assets/img/carousel/'.$a->gambar) }}" class="img-fluid" width="150px"alt="" style="padding-bottom:25px;" data-aos="fade-up"> 
       <h2 style="font-size: 50px;" data-aos="fade-up">{{$a->caption}}</h2>
     </div>
   @endforeach
