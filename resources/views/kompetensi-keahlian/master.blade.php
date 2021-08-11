@@ -142,7 +142,7 @@
 
 
     <div class="footer-top">
-      <div class="container">
+      <div class="container-fluid">
         <div class="row">
             <div class="col-sm-2 col-md-2" style="">
                 <div class="gambar" style="width:150px;padding-botttom:25px;">
@@ -150,7 +150,7 @@
             </div>
             </div>
 
-          <div class="col-lg-3 col-md-6 footer-contact">
+          <div class="col-sm-4 col-md-4 footer-contact" style="">
             <h3>SMK LPPM RI</h3>
             <p>
               Jl. Ters. Nilem Barat No. 49, B No.Kel, Pasirluyu, Kec. Regol, Kota Bandung, Jawa Barat 40254
@@ -165,7 +165,7 @@
           <div class="col-sm-6 col-md-6 footer-links">
             <h4>Siapa Kami</h4>
             <p style="text-align:justify;">Sekolah ini menyediakan berbagai fasilitas penunjang pendidikan bagi anak didiknya. Terdapat guru-guru dengan kualitas terbaik yang kompeten dibidangnya, kegiatan penunjang pembelajaran seperti ekstrakurikuler (ekskul), organisasi siswa, komunitas belajar, tim olahraga, dan perpustakaan sehingga siswa dapat belajar secara maksimal. Proses belajar dibuat senyaman mungkin bagi murid dan siswa.</p>
-            <div class="social-links mt-3">
+            <div class="social">
               <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
               <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
               <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>

@@ -1,4 +1,4 @@
-@extends('kompetensi-keahlian.master')
+@extends('master-hubungi-kami')
 @section('konten')
     
         <div class="section-title" style="margin-top: 50px;padding-top:80px;" data-aos="fade-up">

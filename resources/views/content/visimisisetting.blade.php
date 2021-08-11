@@ -20,7 +20,8 @@
           <thead>
             <tr>
               <th scope="col">No</th>
-              <th scope="col">Visi & Misi</th>
+              <th scope="col">Visi</th>
+              <th scope="col">Misi</th>
               <th scope="col">Aksi</th>
             </tr>
           </thead>
@@ -30,6 +31,7 @@
                 <td>{{ ++$i }}</td>
                 {{-- <td><img src="assets/img/{{ $d->img }}" alt="" srcset="" width="250"></td> --}}
                 <td>{{$d->content}}</td>
+                <td></td>
                 <td>
                     <button class="btn btn-success" data-toggle="modal" data-target="#exampleModal{{$d->id}}">
                       <i class="fas fa-pen"></i>
@@ -67,7 +69,11 @@
             <input type="file" class="form-control" name="foto">
           </div> --}}
           <div class="form-group">
-            <label>Visi & Misi</label>
+            <label>Visi</label>
+            <textarea class="form-control" name="content" id="" cols="50" rows="30"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Misi</label>
             <textarea class="form-control" name="content" id="" cols="50" rows="30"></textarea>
           </div>
       </div>

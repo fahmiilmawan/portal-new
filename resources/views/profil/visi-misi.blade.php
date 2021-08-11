@@ -32,9 +32,14 @@
     <div class="foto" style="text-align: center">
         <h2 > VISI & MISI</h2>
         <h2> SMK LPPM RI BANDUNG</h2>
-        <img src="assets/img/foto2.jpg" alt="" class="img-fluid" width="600px"height="345px">
+        {{-- <img src="assets/img/foto2.jpg" alt="" class="img-fluid" width="600px"height="345px"> --}}
     </div>
     <div class="kata">
+        <h2>VISI</h2>
+        <p>{{$v->content}} </p>
+    </div>
+    <div class="kata">
+        <h2>MISI</h2>
         <p>{{$v->content}} </p>
     </div>
     @endforeach    

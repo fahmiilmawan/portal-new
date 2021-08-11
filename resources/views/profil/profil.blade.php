@@ -32,7 +32,7 @@
           <p class="card-text" style="text-align: justify;"><b>LPPM-RI </b> ( Lembaga Pendidikan & Pengetahuan Masyarakat -Republik Indonesia)
         <br>
         <br> {{$ss -> sejarah_singkat}}</p>
-          <a href="/sejarah-singkat" class="btn btn-primary" style="text-align: left;">Lihat Selengkapnya</a>
+          {{-- <a href="/sejarah-singkat" class="btn btn-primary" style="text-align: left;">Lihat Selengkapnya</a> --}}
         </div>
       </div>
     </div>
@@ -53,7 +53,7 @@
                 <li> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae facilis magnam saepe earum placeat porro et distinctio impedit ex cumque assumenda fuga dolor nam necessitatibus laborum iste officia, rerum voluptate?</li>
               </ul>
             </p>
-            <a href="/visi-misi" class="btn btn-primary" style="text-align: left;">Lihat Selengkapnya</a>
+            {{-- <a href="/visi-misi" class="btn btn-primary" style="text-align: left;">Lihat Selengkapnya</a> --}}
           </div>
         </div>
       </div>
@@ -62,7 +62,7 @@
           <h5 class="card-header" style="text-align: center;">MISI</h5>
           <div class="card-body">
             <p class="card-text" style="text-align: justify;"><b>MISI SMK LPPM RI </b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id voluptate nihil exercitationem provident explicabo. Iusto id atque voluptate nostrum sapiente neque beatae quaerat ut accusamus recusandae? Facilis ea veniam esse! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum dolore eius mollitia, ea alias nostrum velit obcaecati perferendis neque voluptatem, hic voluptates repudiandae ut tempore vel dolorem minima facilis atque.</p>
-            <a href="/visi-misi" class="btn btn-primary" style="text-align: left;">Lihat Selengkapnya</a>
+            {{-- <a href="/visi-misi" class="btn btn-primary" style="text-align: left;">Lihat Selengkapnya</a> --}}
           </div>
         </div>
       </div>

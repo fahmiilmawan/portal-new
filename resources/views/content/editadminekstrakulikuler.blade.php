@@ -4,14 +4,15 @@
 <div class="section-header">
     <h1>Edit Ekstrakulikuler</h1>
 </div>
-<a href="/adminekstrakulikuler" class="btn btn-primary">Kembali</a>
+
 
 <form action="/adminekstrakulikuler/{{ $editAdminEkstrakulikuler->id }}" method="post" style="" enctype="multipart/form-data">
     @csrf
     @method('PUT')
 
    <div class="row">
-        <div class="col-12 col-md-6 col-lg-6">
+
+        <div class="col-12 col-md-6 col-lg-12">
           <div class="card">
             <div class="card-body">
               <div class="form-group">
@@ -32,7 +33,9 @@
                     <i class="fas fa-plus"></i>
                       Update
                   </button>
+                  <a href="/adminekstrakulikuler" class="btn btn-primary">Kembali</a>
               </div>
+              
             </div>
           </div>
 </form>

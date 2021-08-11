@@ -20,9 +20,9 @@
 
 @foreach($showKKRPL as $rpl)
     <div class="row">
-      <div class="col-sm-12 col-md-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+      <div class="col-sm-12 col-md-4 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
         <a href="/rekayasa-perangkat-lunak" > <div class="icon-box">
-          <div class="icon" style="text-align: center;margin-bottom: 50px;"><img src="assets/img/logo1.png" width="100px" alt="" srcset=""></i></div>
+          <div class="icon" style="text-align: center;padding-bottom: 100px;"><img src="assets/img/logo1.png" width="100px" alt="" srcset=""></i></div>
           <h4>{{$rpl -> nama_jurusan}}</h4></a>
           <p style="text-align:justify;"><b>Rekayasa Perangkat Lunak (RPL)</b><br> adalah satu bidang profesi yang mendalami cara-cara pengembangan perangkat lunak termasuk pembuatan, pemeliharaan, manajemen organisasi pengembangan perangkat lunak dan manajemen kualitas</p>
         </div>
@@ -30,7 +30,7 @@
 @endforeach
 
 @foreach($showKKBDP as $bdp)
-      <div class="col-sm-12 col-md-3 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+      <div class="col-sm-12 col-md-4 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
         <a href="/teknik_bisnis_sepeda_motor"><div class="icon-box">
           <div class="icon" style="text-align: center;margin-bottom: 50px;"><img src="assets/img/logo1.png" width="100px" alt="" srcset=""></i></div>
           <h4>{{$bdp-> nama_jurusan}}</h4></a>
@@ -40,7 +40,7 @@
 @endforeach
 
 @foreach($showKKTBSM as $tbsm)
-      <div class="col-sm-12 col-md-3 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
+      <div class="col-sm-12 col-md-4 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
         <a href="/akuntansi"><div class="icon-box">
           <div class="icon" style="text-align: center;margin-bottom: 50px;"><img src="assets/img/logo1.png" width="100px" alt="" srcset=""></i></div>
           <h4>{{$tbsm -> nama_jurusan}}</h4></a>
@@ -50,7 +50,7 @@
 @endforeach
 
 @foreach($showKKAK as $ak)
-      <div class="col-sm-12 col-md-3 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
+      <div class="col-sm-12 col-md-4 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
         <a href="/bisnis_daring_pemasaran"><div class="icon-box">
           <div class="icon" style="text-align: center;margin-bottom: 50px;"><img src="assets/img/logo1.png" width="100px" alt="" srcset=""></i></div>
           <h4>{{$ak -> nama_jurusan}} </h4></a>
@@ -60,7 +60,7 @@
 @endforeach
 
 @foreach($showKKTKRO as $tkro)
-      <div class="col-sm-12 col-md-3 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
+      <div class="col-sm-12 col-md-4 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
         <a href="/teknik_kendaraan_ringan_otomotif"><div class="icon-box">
           <div class="icon" style="text-align: center;margin-bottom: 50px;"><img src="assets/img/logo1.png" width="100px" alt="" srcset=""></i></div>
           <h4>{{$tkro -> nama_jurusan}} </h4></a>
