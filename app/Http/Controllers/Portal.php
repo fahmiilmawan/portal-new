@@ -11,6 +11,7 @@ use App\Models\Announce;
 use App\Models\Carousel;
 use App\Models\Guru;
 use App\Models\Item;
+use App\Models\KepsekModel;
 use App\Models\SejarahSingkat;
 use App\Models\Visimisi;
 use App\Models\KompetensiKeahlian;
@@ -27,7 +28,8 @@ class Portal extends Controller
         $announce   = Announce::latest()->take(1)->where('status', 'PUBLISH')->get();
         $carousel1 = Carousel::where('id', 1)->get();
         $carousel2 = Carousel::where('id', 2)->get();
-        return view('index', compact('artikel', 'announce', 'carousel1', 'carousel2'));
+        $userKepsek = KepsekModel::all();
+        return view('index', compact('artikel', 'announce', 'carousel1', 'carousel2', 'userKepsek'));
     }
 
     public function showAdmin()
@@ -155,6 +157,7 @@ class Portal extends Controller
         return view('galeri.galeri', [
             'galeri' => DB::table('galeri')->paginate(10)
         ]);
+
         // $galeri = Gallery::orderby('id', 'desc')->get();
 
         // return view('galeri.galeri', compact('galeri'));    

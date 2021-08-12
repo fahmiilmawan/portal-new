@@ -256,7 +256,9 @@
                 <!--<div class="section-title">-->
                 <!--  <h3 >KEPALA SEKOLAH</strong></h3>-->
                 <!--</div>-->
-                
+                @foreach ($userKepsek as $kepsek)
+                  
+                @endforeach
                  <div class="accordion-list">
               <ul>
                 <li>
@@ -267,10 +269,8 @@
                       Assalamu'alaikum Warrahmatullahi Wabarakatuh
                       </p>
 <br>
-Selamat datang di Website Official SMK LPPM RI Bandung
-<br\>
 
-SMK LPPM RI Bandung merupakan salah satu sekolah di wilayah Kota Bandung tepatnya di Kecamatan Nilem. Seiring dengan perkembangan teknologi dan informasi, maka saya selaku Kepala Sekolah meresmikan website SMK LPPM RI Bandung sebagai salah satu media informasi bagi masyarakat umum dan khusunya bagi warga sekolah, dimana semua informasi dimuat didalam website ini.
+{{$kepsek->sambutan_kepsek}}
 
 <br>
 <p style="text-align:right;"><b>

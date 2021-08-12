@@ -12,7 +12,6 @@ use App\Http\Controllers\Profil\GuruController;
 use App\Http\Controllers\Profil\KompetensiKeahlianController;
 use App\Http\Controllers\Profil\SejarahSingkatController;
 use App\Http\Controllers\Profil\VisiMisiController;
-use App\Models\Carousel;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +23,7 @@ use App\Models\Carousel;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// Route utama
+// ROUTE HALAMAN INDEX
 Route::get('/', [Portal::class, 'index']);
 Route::get('/galery', [Portal::class, 'showGaleri']);
 

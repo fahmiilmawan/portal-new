@@ -64,9 +64,20 @@
                   <a class="nav-link" href="/main"><i class="fas fa-fire"></i> 
                     <span>Dashboard</span></a>
                   </li>
-                  <li class="{{ (request()->is('carousel') ? 'active' : '') }}">
-                  <a class="nav-link" href="/admincarousel"><i class="fas fa-fire"></i> 
-                    <span>Carousel</span></a>
+                  <li class="nav-item dropdown {{ (request()->is('carousel') ? 'active' : '') }} {{ (request()->is('pengunguman') ? 'active' : '') }}">
+                  <a class="nav-link has-dropdown" href=""><i class="far fa-file-alt"></i> 
+                    <span>Halaman Depan</span></a>
+                    <ul class="dropdown-menu">
+                      <li class="{{ (request()->is('carousel') ? 'active' : '') }}">
+                        <a class="nav-link" href="/admincarousel"> Carousel</a>
+                      </li>
+                      <li class="{{ (request()->is('pengunguman') ? 'active' : '') }}">
+                        <a class="nav-link" href="/pengunguman">Pengumuman</a>
+                      </li>
+                      <li class="">
+                        <a class="nav-link" href="#">Kepala Sekolah</a>
+                      </li>
+                    </ul>
                   </li>
                 <li class="nav-item dropdown {{ (request()->is('artikel') ? 'active' : '') }} {{ (request()->is('tambah-artikel') ? 'active' : '') }}">
                   <a class="nav-link has-dropdown" href=""><i class="far fa-file-alt"></i> 
@@ -88,7 +99,18 @@
                       </li>
                     </ul>
                   </li>
-
+                  <li class="{{ (request()->is('foto') ? 'active' : '') }} {{ (request()->is('tambah-foto') ? 'active' : '') }}">
+                  <a class="nav-link has-dropdown" href="/foto"><i class="far fa-images"></i></i> 
+                    <span>Foto</span></a>
+                    <ul class="dropdown-menu">
+                      <li class="{{ (request()->is('foto') ? 'active' : '') }}">
+                        <a class="nav-link" href="/foto">List Foto</a>
+                      </li>
+                      <li class="{{ (request()->is('tambah-foto') ? 'active' : '') }}">
+                        <a class="nav-link" href="/tambah-foto">Tambah Foto</a>
+                      </li>
+                    </ul>
+                  </li>
                   <li class="{{ (request()->is('admin') ? 'active' : '') }} {{ (request()->is('tambah-admin') ? 'active' : '') }}">
                     <a class="nav-link has-dropdown" href=""><i class="fas fa-user-cog"></i> 
                       <span>Admin</span></a>
@@ -101,21 +123,9 @@
                         </li>
                       </ul>
                     </li>
-
-                    <li class="{{ (request()->is('pengunguman') ? 'active' : '') }} {{ (request()->is('tambah-pengunguman') ? 'active' : '') }}">
-                      <a class="nav-link has-dropdown" href=""><i class="fas fa-bullhorn"></i> 
-                        <span>Pengunguman</span></a>
-                        <ul class="dropdown-menu">
-                          <li class="{{ (request()->is('pengunguman') ? 'active' : '') }}">
-                            <a class="nav-link" href="/pengunguman">List Pengunguman</a>
-                          </li>
-                          <li class="{{ (request()->is('tambah-pengunguman') ? 'active' : '') }}">
-                            <a class="nav-link" href="/tambah-pengunguman">Tambah Pengunguman</a>
-                          </li>
-                        </ul>
-                      </li>
-
-                      <li class="active">
+                      <li class="{{ (request()->is('adminsejarahsingkat') ? 'active' : '') }} {{ (request()->is('pengaturan-visimisi') ? 'active' : '') }}
+                        {{ (request()->is('adminkompetensikeahlian') ? 'active' : '') }} {{ (request()->is('gurustaff') ? 'active' : '') }}
+                        {{ (request()->is('ekstrakulikuler') ? 'active' : '') }}">
                         <a class="nav-link has-dropdown" href=""><i class="fas fa-cogs"></i> 
                           <span>Profil Sekolah</span></a>
                           <ul class="dropdown-menu">
@@ -135,21 +145,10 @@
                               <a class="nav-link" href="/adminekstrakulikuler">Ekstrakulikuler</a>
                             </li>
                           </ul>
-                        </li>   
+                    </li>   
 
-              <li class="menu-header">Galeri</li>
-                <li class="{{ (request()->is('foto') ? 'active' : '') }} {{ (request()->is('tambah-foto') ? 'active' : '') }}">
-                  <a class="nav-link has-dropdown" href="/foto"><i class="far fa-images"></i></i> 
-                    <span>Foto</span></a>
-                    <ul class="dropdown-menu">
-                      <li class="{{ (request()->is('foto') ? 'active' : '') }}">
-                        <a class="nav-link" href="/foto">List Foto</a>
-                      </li>
-                      <li class="{{ (request()->is('tambah-foto') ? 'active' : '') }}">
-                        <a class="nav-link" href="/tambah-foto">Tambah Foto</a>
-                      </li>
-                    </ul>
-                  </li>
+              
+                
         </aside>
       </div>
 
@@ -164,6 +163,10 @@
       <footer class="main-footer">
         <div class="footer-left">
           SMK LPPM RI BANDUNG
+        </div>
+
+        <div class="footer-right">
+          DEVELOPED BY TARPAN TECH COMMUNITY
         </div>
       </footer>
     </div>

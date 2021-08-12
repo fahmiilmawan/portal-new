@@ -43,7 +43,7 @@
           @foreach($foto as $i => $d)
             <tr>
               <td>{{ ++$i }}</td>
-              <td><img src="/galeri/{{ $d->content }}" alt="" width="100"></td>
+              <td><img src="assets\img\galeri\{{ $d->content }}" alt="" width="100"></td>
               <td>{{$d->deskripsi}}</td>
               <td>
                 <a href="/foto/{{ $d->id }}/deleteFoto">
