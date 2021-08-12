@@ -136,7 +136,7 @@ class Portal extends Controller
 
             $imgName = $file->getClientOriginalName() . '-' . rand(1, 20000) . '.' . $file->extension();
 
-            $file->move(public_path('galeri'), $imgName);
+            $file->move('assets\img\galeri', $imgName);
             DB::table('galeri')->insert([
                 'content' => $imgName,
                 'deskripsi' => $request->deskripsi,
@@ -297,4 +297,12 @@ class Portal extends Controller
         return view('kompetensi-keahlian.teknik_kendaraan_ringan_otomotif', compact('showKKTKRO'));
     }
     //END KOMPETENSI KEAHLIAN
+
+    //PAGE GURU
+    public function showGuruPage()
+    {
+        $showPageGuru = Guru::all();
+        return view('profil.guru-staff', compact('showPageGuru'));
+    }
+    //END PAGE GURU
 }

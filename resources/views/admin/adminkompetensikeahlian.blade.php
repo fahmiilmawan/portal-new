@@ -5,7 +5,7 @@
   <h1>Kompetensi Keahlian</h1>
 </div>
 
-<div class="card-body" style="width: 70rem; margin: 0 auto; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+<div class="card-body" style="width: 70rem; margin: 0 auto; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" enctype="multipart/form-data">
     <table class="table table-hover">
       <thead>
         <tr>
@@ -24,11 +24,11 @@
           <tr>
             <td>{{ ++$i }}</td>
             <td>{{ $a->nama_jurusan }}</td>
-            <td>{{ $a->logo_jurusan }}</td>
+            <td><img src="{{ asset('assets/img/kompetensikeahlian/'.$a->logo_jurusan) }}" width="70px" height="70px" alt="Image">    </td>         
             <td>{{ $a->keterangan }}</td>
-            <td>{{ $a->foto_kepala_jurusan }}</td>
+            <td><img src="{{ asset('assets/img/kompetensikeahlian/'.$a->foto_kepala_jurusan) }}" width="70px" height="70px" alt="Image">    </td>
             <td>{{ $a->sambutan_kepala_jurusan }}</td>
-            <td>{{ $a->foto_kegiatan_jurusan }}</td>       
+            <td><img src="{{ asset('assets/img/kompetensikeahlian/'.$a->foto_kegiatan_jurusan) }}" width="70px" height="70px" alt="Image">    </td>       
             <td>
               <a href="/adminkompetensikeahlian/{{$a->id}}/editadminkompetensikeahlian">
                 <button class="btn btn-success">
