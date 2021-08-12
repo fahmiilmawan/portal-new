@@ -33,8 +33,8 @@
     @foreach ($galeri as $g)
       <div class="col-sm-12 col-md-4">
         <div class="item ">
-          <a href="/galeri/{{$g->content}}" class="fancybox" data-fancybox="galeri1">
-          <img src="/galeri/{{$g->content}}" alt="" class="img-fluid" style="max-width:400px;">
+          <a href="assets\img\galeri\{{$g->content}}" class="fancybox" data-fancybox="galeri1">
+          <img src="assets\img\galeri\{{$g->content}}" alt="" class="img-fluid" style="max-width:400px;">
         </a>
         </div>
       </div>    

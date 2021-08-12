@@ -12,7 +12,6 @@ use App\Http\Controllers\Profil\GuruController;
 use App\Http\Controllers\Profil\KompetensiKeahlianController;
 use App\Http\Controllers\Profil\SejarahSingkatController;
 use App\Http\Controllers\Profil\VisiMisiController;
-use App\Models\Carousel;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +23,7 @@ use App\Models\Carousel;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// Route utama
+// ROUTE HALAMAN INDEX
 Route::get('/', [Portal::class, 'index']);
 Route::get('/galery', [Portal::class, 'showGaleri']);
 
@@ -32,6 +31,7 @@ Route::get('/galery', [Portal::class, 'showGaleri']);
 Route::get('/profilsekolah', [Portal::class, 'indexProfilSekolah']);
 Route::get('/visi-misi', [Portal::class, 'showVisiMisi']);
 Route::get('/sejarah-singkat', [Portal::class, 'showSejarahSingkat']);
+Route::get('/guru-staff', [Portal::class, 'showGuruPage']);
 
 //Route Kompetensi Keahlian USER
 Route::get('/kompetensi-keahlian', [Portal::class, 'indexKompetensiKeahlian']);
@@ -43,9 +43,6 @@ Route::get('/akuntansi', [Portal::class, 'showKompetensiKeahlianAK']);
 //END ROUTE KOMPETENSI KEAHLIAN USER
 //END ROUTE PROFIL
 
-Route::get('/guru-staf', function () {
-    return view('guru-staf.guru-staf');
-});
 
 // Auth
 Route::group(['middleware' => 'auth'], function () {
@@ -131,6 +128,7 @@ Route::group(['middleware' => 'auth'], function () {
     //PROFIL SEKOLAH
     Route::get('/adminkompetensikeahlian', [KompetensiKeahlianController::class, 'index']);
     Route::get('/adminkompetensikeahlian/{id}/editadminkompetensikeahlian', [KompetensiKeahlianController::class, 'edit']);
+    Route::put('/adminkompetensikeahlian/{id}', [KompetensiKeahlianController::class, 'update']);
 
     Route::get('/admingurustaff', [GuruController::class, 'index']);
     Route::get('/tambahadmingurustaff', [GuruController::class, 'create']);
@@ -168,9 +166,7 @@ Route::get('/detail-artikel/{slug}', [Article::class, 'detailArtikel']);
 // Route index
 //Routing Profil
 
-Route::get('/guru-staff', function () {
-    return view('profil.guru-staff');
-});
+
 
 // ROUTING EKSTRAKULER
 Route::get('/ekstrakurikuler', function () {

@@ -11,6 +11,7 @@ use App\Models\Announce;
 use App\Models\Carousel;
 use App\Models\Guru;
 use App\Models\Item;
+use App\Models\KepsekModel;
 use App\Models\SejarahSingkat;
 use App\Models\Visimisi;
 use App\Models\KompetensiKeahlian;
@@ -27,7 +28,8 @@ class Portal extends Controller
         $announce   = Announce::latest()->take(1)->where('status', 'PUBLISH')->get();
         $carousel1 = Carousel::where('id', 1)->get();
         $carousel2 = Carousel::where('id', 2)->get();
-        return view('index', compact('artikel', 'announce', 'carousel1', 'carousel2'));
+        $userKepsek = KepsekModel::all();
+        return view('index', compact('artikel', 'announce', 'carousel1', 'carousel2', 'userKepsek'));
     }
 
     public function showAdmin()
@@ -136,7 +138,7 @@ class Portal extends Controller
 
             $imgName = $file->getClientOriginalName() . '-' . rand(1, 20000) . '.' . $file->extension();
 
-            $file->move(public_path('galeri'), $imgName);
+            $file->move('assets\img\galeri', $imgName);
             DB::table('galeri')->insert([
                 'content' => $imgName,
                 'deskripsi' => $request->deskripsi,
@@ -155,6 +157,7 @@ class Portal extends Controller
         return view('galeri.galeri', [
             'galeri' => DB::table('galeri')->paginate(10)
         ]);
+
         // $galeri = Gallery::orderby('id', 'desc')->get();
 
         // return view('galeri.galeri', compact('galeri'));    
@@ -297,4 +300,12 @@ class Portal extends Controller
         return view('kompetensi-keahlian.teknik_kendaraan_ringan_otomotif', compact('showKKTKRO'));
     }
     //END KOMPETENSI KEAHLIAN
+
+    //PAGE GURU
+    public function showGuruPage()
+    {
+        $showPageGuru = Guru::all();
+        return view('profil.guru-staff', compact('showPageGuru'));
+    }
+    //END PAGE GURU
 }

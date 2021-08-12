@@ -1,8 +1,10 @@
 @extends('content.mastercontent')
-
 @section('main')
 
-<form action="" method="post" style="" enctype="multipart/form-data">
+<form action="/adminkompetensikeahlian/{{ $editAdminKompetensiKeahlian->id }}" method="post" style="" enctype="multipart/form-data">
+  @csrf
+  @method('PUT')
+
     <div class="" style="width:2000px">
       <div class="row" style="">
           <div class="col-sm-3 col-md-6 ">
@@ -13,35 +15,38 @@
                 </div>
                 <div class="form-group">
                   <label>No</label>
-                  <input type="text" class="form-control" name="title" value="" readonly>
+                  <input type="text" class="form-control" name="title" enctype="multipart/form-data" readonly>
                 </div>
                     <div class="form-group">
                         <label for="">Nama Jurusan</label>
                         <br>
-                        <input type="text" class="form-control" name="" id="">
+                        <input type="text" class="form-control" name="nama_jurusan" id="" value="{{ $editAdminKompetensiKeahlian->nama_jurusan }}">
                     </div>
                         <div class="form-group">
                             <label>Logo</label>
-                            <input type="file" name="" id="" class="form-control" value="" >
+                            <input type="file" name="logo_jurusan" id="" class="form-control" >
+                            <img src="{{ asset('assets/img/kompetensikeahlian/'.$editAdminKompetensiKeahlian->logo_jurusan) }}" width="70px" height="70px" alt="Image">    
                         </div>
                             <div class="form-group">
                                 <label for="">Keterangan</label>
                                 <br>
-                                <textarea name="" class ="form-control" id="" cols="30" rows="10"></textarea>
+                                <input type="text" name="keterangan" value="{{ $editAdminKompetensiKeahlian->keterangan }}" class ="form-control" id="" cols="30" rows="10">
                             </div>
                                 <div class="form-group">
                                     <label>Foto Kepala Program</label>
-                                    <input type="file" name="" id="" class="form-control" value="" >
-                                </div>
+                                    <input type="file" name="foto_kepala_jurusan" id="" class="form-control" >
+                                    <img src="{{ asset('assets/img/kompetensikeahlian/'.$editAdminKompetensiKeahlian->foto_kepala_jurusan) }}" width="70px" height="70px" alt="Image">
+                                  </div>
                                     <div class="form-group">
                                         <label for="">Sambutan Kepala Program</label>
                                         <br>
-                                        <textarea name="" class ="form-control" id="" cols="30" rows="10"></textarea>
+                                        <input type ="text" name="sambutan_kepala_jurusan" value="{{ $editAdminKompetensiKeahlian->sambutan_kepala_jurusan }}" class ="form-control" cols="30" rows="10">
                                     </div>
                                         <div class="form-group">
                                             <label>Foto Kegiatan Program</label>
-                                            <input type="file" name="" id="" class="form-control" value="" >
-                                        </div>
+                                            <input type="file" name="foto_kegiatan_jurusan" id="" class="form-control"  >
+                                            <img src="{{ asset('assets/img/kompetensikeahlian/'.$editAdminKompetensiKeahlian->foto_kegiatan_jurusan) }}" width="70px" height="70px" alt="Image">
+                                          </div>
                                              <div class="form-group">
                                                 <button type="submit" class="btn btn-primary">
                                                 <i class="fas fa-plus"></i>

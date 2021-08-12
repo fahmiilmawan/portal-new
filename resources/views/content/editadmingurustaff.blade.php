@@ -25,6 +25,7 @@
               <div class="form-group">
                 <label>Foto</label>
                 <input type="file" class="form-control" name="foto_guru">
+                <img src="{{ asset('assets/img/gurustaff/'.$editAdminGuruStaff->foto_guru) }}" width="70px" height="70px" alt="Image">    
               </div>
               <div class="form-group">
                 <label>Jabatan</label>
