@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Index;
 
 use App\Http\Controllers\Controller;
+use App\Models\KepsekModel;
 use Illuminate\Http\Request;
 
 class KepsekController extends Controller
@@ -14,7 +15,8 @@ class KepsekController extends Controller
      */
     public function index()
     {
-        //
+        $showAdmKepsek = KepsekModel::orderBy('id', 'desc')->get();
+        return view('admin.adminkepsek', compact('showAdmKepsek'));
     }
 
     /**

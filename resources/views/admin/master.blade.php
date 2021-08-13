@@ -74,8 +74,8 @@
                       <li class="{{ (request()->is('pengunguman') ? 'active' : '') }}">
                         <a class="nav-link" href="/pengunguman">Pengumuman</a>
                       </li>
-                      <li class="">
-                        <a class="nav-link" href="#">Kepala Sekolah</a>
+                      <li class="{{ (request()->is('adminkepsek') ? 'active' : '') }}">
+                        <a class="nav-link" href="/adminkepsek">Kepala Sekolah</a>
                       </li>
                     </ul>
                   </li>

@@ -70,8 +70,23 @@
         @endforeach
       </tbody>
     </table>
+
+    <div class="pull-left">
+      Menampilkan
+      {{$showAdminGuruStaff->firstItem()}}
+      Data dari
+      {{$showAdminGuruStaff->lastItem()}}
+      Total Data
+      {{$showAdminGuruStaff->total()}}
+    </div>
+    <div class="pull-right">
+      {{$showAdminGuruStaff->links()}}
+    </div>
+      
+    </div>
     
   </div>
+  
 </div>
 
 

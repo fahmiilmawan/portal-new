@@ -7,6 +7,7 @@ use App\Http\Controllers\Gallery\Galeri;
 use App\Http\Controllers\Pengunguman\Pengunguman;
 use App\Http\Controllers\Auth\Auth;
 use App\Http\Controllers\Index\CarouselController;
+use App\Http\Controllers\Index\KepsekController;
 use App\Http\Controllers\Profil\EkstrakulikulerController;
 use App\Http\Controllers\Profil\GuruController;
 use App\Http\Controllers\Profil\KompetensiKeahlianController;
@@ -123,6 +124,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/tambahadmincarousel', [CarouselController::class, 'store']);
     Route::get('/admincarousel/{id}/editadmincarousel', [CarouselController::class, 'edit']);
     Route::put('/admincarousel/{id}', [CarouselController::class, 'update']);
+    Route::get('/adminkepsek', [KepsekController::class, 'index']);
     //END INDEX HALAMAN DEPAN
 
     //PROFIL SEKOLAH

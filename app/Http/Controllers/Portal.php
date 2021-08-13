@@ -28,7 +28,7 @@ class Portal extends Controller
         $announce   = Announce::latest()->take(1)->where('status', 'PUBLISH')->get();
         $carousel1 = Carousel::where('id', 1)->get();
         $carousel2 = Carousel::where('id', 2)->get();
-        $userKepsek = KepsekModel::all();
+        $userKepsek = KepsekModel::orderBy('id', 'asc')->get();
         return view('index', compact('artikel', 'announce', 'carousel1', 'carousel2', 'userKepsek'));
     }
 
@@ -234,10 +234,19 @@ class Portal extends Controller
     {
         $showSejarahSingkat = SejarahSingkat::all('sejarah_singkat');
         $showVisiMisi = Visimisi::all();
-        $showGuru = Guru::all();
+        $showGuru = Guru::orderBy('id', 'desc')->limit(4)->get();
 
         return view('profil.profil', compact('showSejarahSingkat', 'showVisiMisi', 'showGuru'));
     }
+
+    //PAGE GURU
+    public function showGuruPage()
+    {
+        $showPageGuru = Guru::latest()->paginate(4);
+        return view('profil.guru-staff', compact('showPageGuru'));
+    }
+    //END PAGE GURU
+
     //END PROFIL SEKOLAH
 
     // VISI - MISI
@@ -301,11 +310,5 @@ class Portal extends Controller
     }
     //END KOMPETENSI KEAHLIAN
 
-    //PAGE GURU
-    public function showGuruPage()
-    {
-        $showPageGuru = Guru::all();
-        return view('profil.guru-staff', compact('showPageGuru'));
-    }
-    //END PAGE GURU
+
 }
