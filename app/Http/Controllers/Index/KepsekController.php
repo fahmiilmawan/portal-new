@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Index;
 use App\Http\Controllers\Controller;
 use App\Models\KepsekModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class KepsekController extends Controller
 {
@@ -26,7 +27,8 @@ class KepsekController extends Controller
      */
     public function create()
     {
-        //
+        $tambahAdmKepsek = KepsekModel::all();
+        return view('content.addadminkepsek', compact('tambahAdmKepsek'));
     }
 
     /**
@@ -37,7 +39,19 @@ class KepsekController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $storeAdmKp = new KepsekModel();
+        $storeAdmKp->sambutan_kepsek = $request->sambutan_kepsek;
+
+        if ($request->hasFile('foto_kepsek')) {
+            $file = $request->file('foto_kepsek');
+            $extention = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extention;
+            $file->move('assets\img\kepsek', $filename);
+            $storeAdmKp->foto_kepsek = $filename;
+        }
+
+        $storeAdmKp->save();
+        return redirect('/adminkepsek')->with('status', 'Kepala Sekolah Berhasil Ditambahkan');
     }
 
     /**
@@ -59,7 +73,9 @@ class KepsekController extends Controller
      */
     public function edit($id)
     {
-        //
+        $editAdmKp = KepsekModel::find($id);
+
+        return view('content.editadminkepsek', compact('editAdmKp'));
     }
 
     /**
@@ -71,7 +87,26 @@ class KepsekController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $editAdmKp = KepsekModel::find($id);
+        $editAdmKp->sambutan_kepsek = $request->sambutan_kepsek;
+
+        if ($request->hasFile('foto_kepsek')) {
+
+            $destination = 'assets\img\kepsek' . $editAdmKp->foto_kepsek;
+
+            if (File::exists($destination)) {
+                File::delete($destination);
+            }
+
+            $file = $request->file('foto_kepsek');
+            $extention = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extention;
+            $file->move('assets\img\kepsek', $filename);
+            $editAdmKp->foto_kepsek = $filename;
+        }
+
+        $editAdmKp->update();
+        return redirect('/adminkepsek')->with('status', 'Foto / Sambutan Kepala Sekolah Berhasil Diubah');
     }
 
     /**
@@ -82,6 +117,11 @@ class KepsekController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        $delete = KepsekModel::find($id);
+
+        $delete->delete();
+
+        return redirect()->back()->with('delete', 'Foto / Sambutan Kepala Sekolah berhasil dihapus');
     }
 }

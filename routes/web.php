@@ -125,6 +125,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/admincarousel/{id}/editadmincarousel', [CarouselController::class, 'edit']);
     Route::put('/admincarousel/{id}', [CarouselController::class, 'update']);
     Route::get('/adminkepsek', [KepsekController::class, 'index']);
+    Route::get('/tambahadminkepsek', [KepsekController::class, 'create']);
+    Route::post('/tambahadminkepsek', [KepsekController::class, 'store']);
+    Route::get('/adminkepsek/{id}/editadminkepsek', [KepsekController::class, 'edit']);
+    Route::put('/adminkepsek/{id}', [KepsekController::class, 'update']);
+    Route::get('/adminkepsek/{id}/deleteadminkepsek', [KepsekController::class, 'destroy']);
     //END INDEX HALAMAN DEPAN
 
     //PROFIL SEKOLAH

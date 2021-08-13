@@ -258,7 +258,7 @@
                 <!--</div>-->
                 @foreach ($userKepsek as $kepsek)
                   
-                @endforeach
+                
                  <div class="accordion-list">
               <ul>
                 <li>
@@ -300,7 +300,7 @@ Rd. Neneng Marlina, S.H.,MM
           </div>
           <div class="col-sm-7 col-md-4" style="text-align:center;padding-right:px;">
               
-                <img src="assets/img/bu_neneng.jpg" alt="" class="img-fluid" width="600px" height="100px">
+                <img src="{{ asset('assets/img/kepsek/'.$kepsek->foto_kepsek) }}" alt="" class="img-fluid" width="600px" height="100px">
                 
           </div>
           </div>
@@ -308,7 +308,7 @@ Rd. Neneng Marlina, S.H.,MM
           <br>
           <br>
           </div>
-
+@endforeach
           <!--<div class="col-sm-6 align-items-stretch order-1 order-lg-2 img" style='background-image: url("assets/img/why-us.jpg");' data-aos="zoom-in" data-aos-delay="150">&nbsp;</div>-->
        
               <!--  <div class="accordion-list">-->

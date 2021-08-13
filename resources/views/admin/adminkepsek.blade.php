@@ -7,7 +7,7 @@
 
 <div class="container" style="margin-top: 50px;">
 
-    <a href="/tambah-pengunguman" class="btn btn-primary mb-3" style="">
+    <a href="/tambahadminkepsek" class="btn btn-primary mb-3" style="">
       <i class="fas fa-plus"></i>
       Tambah
     </a>
@@ -40,15 +40,17 @@
         @foreach($showAdmKepsek as $i => $a)
           <tr>
             <td>{{ ++$i }}</td>
-            <td>{!! $a->foto_kepsek !!}</td>
+            <td>
+                <img src="{{ asset('assets/img/kepsek/'.$a->foto_kepsek) }}" width="70px" height="70px" alt="Image">    
+            </td>
             <td>{{ $a->sambutan_kepsek }}</td>
             <td>
-              <a href="">
+              <a href="/adminkepsek/{{$a->id}}/editadminkepsek">
                 <button class="btn btn-success">
                   <i class="fas fa-pen"></i>
                 </button>
               </a>
-              <a href="">
+              <a href="/adminkepsek/{{$a->id}}/deleteadminkepsek">
                 <button class="btn btn-danger">
                   <i class="fas fa-trash"></i>
                 </button>
