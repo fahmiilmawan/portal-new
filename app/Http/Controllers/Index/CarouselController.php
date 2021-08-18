@@ -46,7 +46,7 @@ class CarouselController extends Controller
             $file = $request->file('gambar');
             $extention = $file->getClientOriginalExtension();
             $filename = time() . '.' . $extention;
-            $file->move('assets\img\carousel', $filename);
+            $file->move('assets/img/carousel', $filename);
             $storeAdmCrl->gambar = $filename;
         }
 
@@ -92,7 +92,7 @@ class CarouselController extends Controller
 
         if ($request->hasFile('gambar')) {
 
-            $destination = 'assets\img\carousel' . $storeAdmCrs->gambar;
+            $destination = 'assets/img/carousel' . $storeAdmCrs->gambar;
 
             if (File::exists($destination)) {
                 File::delete($destination);
@@ -101,7 +101,7 @@ class CarouselController extends Controller
             $file = $request->file('gambar');
             $extention = $file->getClientOriginalExtension();
             $filename = time() . '.' . $extention;
-            $file->move('assets\img\carousel', $filename);
+            $file->move('assets/img/carousel', $filename);
             $storeAdmCrs->gambar = $filename;
         }
 

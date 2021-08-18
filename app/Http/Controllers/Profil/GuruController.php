@@ -51,7 +51,7 @@ class GuruController extends Controller
             $file = $request->file('foto_guru');
             $extention = $file->getClientOriginalExtension();
             $filename = time() . '.' . $extention;
-            $file->move('assets\img\gurustaff', $filename);
+            $file->move('assets/img/gurustaff', $filename);
             $storeAdmGS->foto_guru = $filename;
         }
 
@@ -102,7 +102,7 @@ class GuruController extends Controller
 
         if ($request->hasFile('foto_guru')) {
 
-            $destination = 'assets\img\gurustaff' . $storeAdmGS->foto_guru;
+            $destination = 'assets/img/gurustaff' . $storeAdmGS->foto_guru;
 
             if (File::exists($destination)) {
                 File::delete($destination);
@@ -111,7 +111,7 @@ class GuruController extends Controller
             $file = $request->file('foto_guru');
             $extention = $file->getClientOriginalExtension();
             $filename = time() . '.' . $extention;
-            $file->move('assets\img\gurustaff', $filename);
+            $file->move('assets/img/gurustaff', $filename);
             $storeAdmGS->foto_guru = $filename;
         }
 

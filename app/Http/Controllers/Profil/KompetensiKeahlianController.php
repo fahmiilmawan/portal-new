@@ -81,7 +81,7 @@ class KompetensiKeahlianController extends Controller
         //Logo Jurusan
         if ($request->hasFile('logo_jurusan')) {
 
-            $destination = 'assets\img\kompetensikeahlian' . $storeAdmKKH->logo_jurusan;
+            $destination = 'assets/img/kompetensikeahlian' . $storeAdmKKH->logo_jurusan;
 
             if (File::exists($destination)) {
                 File::delete($destination);
@@ -90,14 +90,14 @@ class KompetensiKeahlianController extends Controller
             $file = $request->file('logo_jurusan');
             $extention = $file->getClientOriginalExtension();
             $filename = time() . '.' . $extention;
-            $file->move('assets\img\kompetensikeahlian', $filename);
+            $file->move('assets/img/kompetensikeahlian', $filename);
             $storeAdmKKH->logo_jurusan = $filename;
         }
 
         //Foto Kepala Jurusan
         if ($request->hasFile('foto_kepala_jurusan')) {
 
-            $destination = 'assets\img\kompetensikeahlian' . $storeAdmKKH->foto_kepala_jurusan;
+            $destination = 'assets/img/kompetensikeahlian' . $storeAdmKKH->foto_kepala_jurusan;
 
             if (File::exists($destination)) {
                 File::delete($destination);
@@ -106,14 +106,14 @@ class KompetensiKeahlianController extends Controller
             $file = $request->file('foto_kepala_jurusan');
             $extention = $file->getClientOriginalExtension();
             $filename = time() . '.' . $extention;
-            $file->move('assets\img\kompetensikeahlian', $filename);
+            $file->move('assets/img/kompetensikeahlian', $filename);
             $storeAdmKKH->foto_kepala_jurusan = $filename;
         }
 
         //Foto Kegiatan Jurusan
         if ($request->hasFile('foto_kegiatan_jurusan')) {
 
-            $destination = 'assets\img\kompetensikeahlian' . $storeAdmKKH->foto_kegiatan_jurusan;
+            $destination = 'assets/img/kompetensikeahlian' . $storeAdmKKH->foto_kegiatan_jurusan;
 
             if (File::exists($destination)) {
                 File::delete($destination);
@@ -122,7 +122,7 @@ class KompetensiKeahlianController extends Controller
             $file = $request->file('foto_kegiatan_jurusan');
             $extention = $file->getClientOriginalExtension();
             $filename = time() . '.' . $extention;
-            $file->move('assets\img\foto_kegiatan_jurusan', $filename);
+            $file->move('assets/img/kompetensikeahlian', $filename);
             $storeAdmKKH->foto_kegiatan_jurusan = $filename;
         }
 

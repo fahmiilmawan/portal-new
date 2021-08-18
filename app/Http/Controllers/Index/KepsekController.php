@@ -46,7 +46,7 @@ class KepsekController extends Controller
             $file = $request->file('foto_kepsek');
             $extention = $file->getClientOriginalExtension();
             $filename = time() . '.' . $extention;
-            $file->move('assets\img\kepsek', $filename);
+            $file->move('assets/img/kepsek', $filename);
             $storeAdmKp->foto_kepsek = $filename;
         }
 
@@ -92,7 +92,7 @@ class KepsekController extends Controller
 
         if ($request->hasFile('foto_kepsek')) {
 
-            $destination = 'assets\img\kepsek' . $editAdmKp->foto_kepsek;
+            $destination = 'assets/img/kepsek' . $editAdmKp->foto_kepsek;
 
             if (File::exists($destination)) {
                 File::delete($destination);
@@ -101,7 +101,7 @@ class KepsekController extends Controller
             $file = $request->file('foto_kepsek');
             $extention = $file->getClientOriginalExtension();
             $filename = time() . '.' . $extention;
-            $file->move('assets\img\kepsek', $filename);
+            $file->move('assets/img/kepsek', $filename);
             $editAdmKp->foto_kepsek = $filename;
         }
 

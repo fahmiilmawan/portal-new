@@ -48,7 +48,7 @@ class EkstrakulikulerController extends Controller
             $file = $request->file('logo_ekstrakulikuler');
             $extention = $file->getClientOriginalExtension();
             $filename = time() . '.' . $extention;
-            $file->move('assets\img\ekstrakulikuler', $filename);
+            $file->move('assets/img/ekstrakulikuler', $filename);
             $storeAdmEks->logo_ekstrakulikuler = $filename;
         }
 
@@ -95,7 +95,7 @@ class EkstrakulikulerController extends Controller
 
         if ($request->hasFile('logo_ekstrakulikuler')) {
 
-            $destination = 'assets\img\ekstrakulikuler' . $storeAdmEks->logo_ekstrakulikuler;
+            $destination = 'assets/img/ekstrakulikuler' . $storeAdmEks->logo_ekstrakulikuler;
 
             if (File::exists($destination)) {
                 File::delete($destination);
@@ -104,7 +104,7 @@ class EkstrakulikulerController extends Controller
             $file = $request->file('logo_ekstrakulikuler');
             $extention = $file->getClientOriginalExtension();
             $filename = time() . '.' . $extention;
-            $file->move('assets\img\ekstrakulikuler', $filename);
+            $file->move('assets/img/ekstrakulikuler', $filename);
             $storeAdmEks->logo_ekstrakulikuler = $filename;
         }
 

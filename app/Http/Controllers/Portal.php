@@ -138,7 +138,7 @@ class Portal extends Controller
 
             $imgName = $file->getClientOriginalName() . '-' . rand(1, 20000) . '.' . $file->extension();
 
-            $file->move('assets\img\galeri', $imgName);
+            $file->move('assets/img/galeri', $imgName);
             DB::table('galeri')->insert([
                 'content' => $imgName,
                 'deskripsi' => $request->deskripsi,
