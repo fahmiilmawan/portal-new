@@ -82,7 +82,7 @@
   
 <div class="col-sm-12 col-md-4" data-aos="zoom-in" data-aos-delay="100">
 <div class="card" style="max-width:400px;">
-  <img class="card-img-top" src="..." alt="Card image cap" style="text-align: center;">
+  <div class="text-center"><img class="card-img-top" src="assets/img/lppm_ri.png" alt="Card image cap" style="text-align:center;width:150px;"></div>
   <div class="card-body">
     <a href="/teknik_kendaraan_ringan_otomotif">
       <div class="judul-jurusan" style="margin:20px;text-align:center;">
@@ -90,7 +90,7 @@
   </a>
   </div>
   <br>
-  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  <p class="card-text" style="text-align: justify;">Rekayasa Perangkat Lunak (RPL, atau dalam bahasa Inggris: Software Engineering atau SE) adalah satu bidang profesi yang mendalami cara-cara pengembangan perangkat lunak termasuk pembuatan, pemeliharaan, manajemen organisasi pengembangan perangkat lunak dan manajemen kualitas.</p>
   </div>
 </div>
 </div>
@@ -100,7 +100,7 @@
 
 <div class="col-sm-12 col-md-4" data-aos="zoom-in" data-aos-delay="100">
   <div class="card" style="max-width:400px;;height:auto;">
-    <img class="card-img-top" src="..." alt="Card image cap" style="text-align: center;">
+    <div class="text-center"><img class="card-img-top" src="assets/img/lppm_ri.png" alt="Card image cap" style="text-align:center;width:150px;"></div>
     <div class="card-body">
       <div class="judul-jurusan" style="margin:20px;text-align:center;">
       <a href="/teknik_kendaraan_ringan_otomotif">
@@ -108,7 +108,7 @@
     </a>
       </div>
     <br>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <p class="card-text">Bisnis Daring dan Pemasaran adalah sebuah kompetensi keahlian (jurusan) yang mempelajari dasar - dasar kemampuan dan keilmuan menjadi seorang marketing baik marketing secara konvensional maupun melalui media daring (online/internet). Di Kompetensi Keahlian Bisnis Daring dan Pemasaran siswa akan mempelajari strategi pasar, kewirausahaan dan membaca peluang di dunia bisnis</p>
     </div>
   </div>
   </div>
@@ -118,7 +118,7 @@
  
   <div class="col-sm-12 col-md-4" data-aos="zoom-in" data-aos-delay="100">
     <div class="card" style="max-width:400px;">
-      <img class="card-img-top" src="..." alt="Card image cap" style="text-align: center;">
+      <div class="text-center"><img class="card-img-top" src="assets/img/lppm_ri.png" alt="Card image cap" style="text-align:center;width:150px;"></div>
       <div class="card-body">
         <div class="judul-jurusan" style="margin:20px;text-align:center;">
         <a href="/teknik_kendaraan_ringan_otomotif">
@@ -126,7 +126,7 @@
       </a>
         </div>
       <br>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <p class="card-text">Teknik dan Bisnis Sepeda Motor (TBSM) adalah salah satu cabang ilmu teknik mesin yang mempelajari tentang bagaimana merancang, membuat dan mengembangkan alat-alat transportasi darat yang menggunakan mesin, terutama sepeda motor</p>
       </div>
     </div>
     </div>
@@ -138,7 +138,7 @@
     
     <div class="col-sm-12 col-md-6" data-aos="zoom-in" data-aos-delay="100">
       <div class="card" style="max-width: 400px;">
-        <img class="card-img-top" src="..." alt="Card image cap" style="text-align: center;">
+        <div class="text-center"><img class="card-img-top" src="assets/img/lppm_ri.png" alt="Card image cap" style="text-align:center;width:150px;"></div>
         <div class="card-body">
           <div class="judul-jurusan" style="margin:20px;text-align:center;">
           <a href="/teknik_kendaraan_ringan_otomotif">
@@ -146,25 +146,25 @@
         </a>
       </div>
         <br>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <p class="card-text" style="text-align:justify;">Secara umum, pengertian akuntansi adalah suatu proses mencatat, meringkas, mengklasifikasikan, mengolah, dan menyajikan data transaksi, serta berbagai aktivitas yang berhubungan dengan keuangan, sehingga informasi tersebut dapat digunakan oleh seseorang yang ahli di bidangnya dan menjadi bahan untuk mengambil suatu keputusan</p>
         </div>
       </div>
       </div>
       @endforeach
-      @foreach($showKKAK as $ak)
+      @foreach($showKKTKRO as $tkro)
       
     
     <div class="col-sm-12 col-md-6" data-aos="zoom-in" data-aos-delay="100">
       <div class="card" style="max-width: 400px;">
-        <img class="card-img-top" src="..." alt="Card image cap" style="text-align: center;">
+        <div class="text-center"><img class="card-img-top" src="assets/img/lppm_ri.png" alt="Card image cap" style="text-align:center;width:150px;"></div>
         <div class="card-body">
           <div class="judul-jurusan" style="margin:20px;text-align:center;">
           <a href="/teknik_kendaraan_ringan_otomotif">
-            <h4 class="card-text">{{$ak -> nama_jurusan}}</h4>
+            <h4 class="card-text">{{$tkro -> nama_jurusan}}</h4>
         </a>
           </div>
         <br>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <p class="card-text">Teknik Kendaraan Ringan adalah ilmu yang mempelajari tentang alat-alat transportasi darat yang menggunakan mesin, terutama mobil yang mulai berkembang sebagai cabang ilmu seiring dengan diciptakannya mesin mobil.</p>
         </div>
       </div>
       </div>

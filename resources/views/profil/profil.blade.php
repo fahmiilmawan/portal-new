@@ -33,6 +33,9 @@
     <br>
     <br>
     <div class="container" style="" >
+      <div class="text-center"><img src="assets/img/lppm_ri.png" style="width:200px;" alt=""></div>
+      <br>
+      <br>
     <div class="card" data-aos="fade-up">
         <h5 class="card-header" style="text-align: center;font-size:20px;color:#3c4c6a;">SEJARAH SMK LPPM RI</h5>
         <div class="card-body">
