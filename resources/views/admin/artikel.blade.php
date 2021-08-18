@@ -62,7 +62,18 @@
         @endforeach
       </tbody>
     </table>
-    {{$artikel->links()}}
+    <div class="pull-left">
+      Menampilkan
+      {{$artikel->firstItem()}}
+      Data dari
+      {{$artikel->lastItem()}}
+      Total Data
+      {{$artikel->total()}}
+    </div>
+    <div class="d-flex flex-row-reverse">
+      {{$artikel->links()}}
+    </div>
+    
   </div>
 </div>
 

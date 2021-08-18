@@ -27,7 +27,7 @@
     </div>
   @endif
 
-<div class="card-body" style="width: 70rem; margin: 0 auto; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+<div class="card-body" style="width: 70rem;padding:25px; margin: 0 auto; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
     <table class="table table-hover">
       <thead>
         <tr>
@@ -35,7 +35,7 @@
           <th scope="col">NIP</th>
           <th scope="col">Nama Guru</th>
           <th scope="col">Foto Guru</th>
-          <th scope="col">Jabatan Guru</th>
+          <th scope="col">Jabatan</th>
           <th scope="col">Mata Pelajaran</th>
           <th scope="col">Jenis Kelamin</th>
           <th scope="col">Biodata</th>
@@ -65,12 +65,16 @@
                   <i class="fas fa-trash"></i>
                 </button>
               </a>
+              @endforeach
+            
             </td>
+           
           </tr>
-        @endforeach
+        
+       
       </tbody>
+    
     </table>
-
     <div class="pull-left">
       Menampilkan
       {{$showAdminGuruStaff->firstItem()}}
@@ -79,9 +83,12 @@
       Total Data
       {{$showAdminGuruStaff->total()}}
     </div>
-    <div class="pull-right">
+    <div class="d-flex flex-row-reverse">
       {{$showAdminGuruStaff->links()}}
     </div>
+    
+
+    
       
     </div>
     

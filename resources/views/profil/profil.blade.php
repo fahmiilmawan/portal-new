@@ -1,14 +1,21 @@
-@extends('kompetensi-keahlian.master')
+@extends('master')
 @section('konten')
 <head>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
   <style>
       .img{
           width: 100%;
           height: auto;
       }
       .kata{
-          text-align: justify;
+          text-align: ;
           margin: 15px;   
       }
       .item{
@@ -27,7 +34,7 @@
     <br>
     <div class="container" style="" >
     <div class="card" data-aos="fade-up">
-        <h5 class="card-header" style="text-align: center;">SEJARAH SMK LPPM RI</h5>
+        <h5 class="card-header" style="text-align: center;font-size:20px;color:#3c4c6a;">SEJARAH SMK LPPM RI</h5>
         <div class="card-body">
           <p class="card-text" style="text-align: justify;"><b>LPPM-RI </b> ( Lembaga Pendidikan & Pengetahuan Masyarakat -Republik Indonesia)
         <br>
@@ -38,41 +45,41 @@
     </div>
 
 @endforeach
+@foreach($showVisiMisi as $v)
+  
 
-    <div class="row" style="padding:25px;"data-aos="fade-up">
-      <div class="col-md-6">
-      <div class="card" >
-          <h5 class="card-header" style="text-align: center;">VISI</h5>
-          <div class="card-body">
-            <p class="card-text" style="text-align: justify;"><b>VISI SMK LPPM RI</b></p>
-            <p class="card-text" style="text-align: justify;">
-              <ul>
-                <li> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt commodi nostrum, dolore accusantium nulla dicta cum doloribus! Illo natus commodi fugiat! Eum vero vitae iusto beatae mollitia illum nemo magnam!</li>
-                <li> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est ut iure praesentium suscipit. Distinctio laudantium qui velit ea nesciunt alias officia quod molestiae nostrum enim! Nulla a modi dolorem nesciunt!</li>
-                <li> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi fugiat debitis praesentium quia rem ipsam, corporis soluta consectetur pariatur similique explicabo! Id aspernatur aliquid ea ad! Earum voluptatibus repellat necessitatibus!</li>
-                <li> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae facilis magnam saepe earum placeat porro et distinctio impedit ex cumque assumenda fuga dolor nam necessitatibus laborum iste officia, rerum voluptate?</li>
-              </ul>
-            </p>
-            {{-- <a href="/visi-misi" class="btn btn-primary" style="text-align: left;">Lihat Selengkapnya</a> --}}
-          </div>
-        </div>
+<div class="latar"style="background-color:#eee;">
+  <br>
+  <br>
+  <div class="container" style="" >
+  <div class="card" data-aos="fade-up">
+      <h5 class="card-header" style="text-align: center;font-size:20px;color:#3c4c6a;">VISI SMK LPPM RI</h5>
+      <div class="card-body">
+      <br> 
+      <p>{{$v-> visi}}</p>
+      @endforeach
       </div>
-      <div class="col-md-6">
-        <div class="card" >
-          <h5 class="card-header" style="text-align: center;">MISI</h5>
-          <div class="card-body">
-            <p class="card-text" style="text-align: justify;"><b>MISI SMK LPPM RI </b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id voluptate nihil exercitationem provident explicabo. Iusto id atque voluptate nostrum sapiente neque beatae quaerat ut accusamus recusandae? Facilis ea veniam esse! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum dolore eius mollitia, ea alias nostrum velit obcaecati perferendis neque voluptatem, hic voluptates repudiandae ut tempore vel dolorem minima facilis atque.</p>
-            {{-- <a href="/visi-misi" class="btn btn-primary" style="text-align: left;">Lihat Selengkapnya</a> --}}
-          </div>
-        </div>
+    </div>
+    
+      
+    
+    <div class="card" data-aos="fade-up">
+      <h5 class="card-header" style="text-align: center;font-size:20px;color:#3c4c6a;">MISI SMK LPPM RI</h5>
+      <div class="card-body">
+      <br> 
+      @foreach($showVisiMisi as $m)
+        <br> 
+        <p>{{$m-> misi}}</p>
+        @endforeach
       </div>
-      </div>
+    </div>
   </div>
-      {{-- GALERI --}}
 
-<div class="section-title" style="margin-top: 50px;padding-top:50px;" data-aos="fade-up" enctype="multipart/form-data">
-    <h2>GURU & STAFF</h2>
-  </div>
+   
+
+      <div class="section-title" style="margin-top: 50px;padding-top:25px;" data-aos="fade-up">
+        <h2>GURU & STAFF</h2>
+      </div>
   <div class="latar"style="background-color:#eee;">
     <br>
     <br>
@@ -81,20 +88,21 @@
 
         @foreach ($showGuru as $guru)
 
-        <div class="col" style="text-align: center;">
-          <div class="item col-sm-12 col-md-12 ">   
-            <a href="{{$guru->foto_guru}}" class="fancybox" data-fancybox="galeri1">
-            <img src="{{ asset('assets/img/gurustaff/'.$guru->foto_guru) }}" alt="" class="img-fluid" style="max-width:300px;height:500px;"></a>
-            <h1 style="font-size:25px;color:#3c4c6a;">{{$guru->nama_guru}}</h1>
-            <h1 style="font-size:25px;color:#3c4c6a;">{{$guru->mapel_diampu_guru}}</h1>
-          </div>
+        <div class="col" style="">
+          <div class="item col-sm-12 col-md-3 ">   
+            {{-- <a href="{{$guru->foto_guru}}" class="fancybox" data-fancybox="galeri1"> --}}
+            <img src="{{ asset('assets/img/gurustaff/'.$guru->foto_guru) }}" alt="" class="img-fluid" style="max-width:300px;height:350px;"></a>
+    
+            <h1 style="font-size:25px;color:#3c4c6a;text-align:center;">{{$guru->nama_guru}}</h1>
+            <h1 style="font-size:25px;color:#3c4c6a;text-align:center;">{{$guru->mapel_diampu_guru}}</h1>
         </div>
 
         @endforeach
-
-        <div class="tombol" style="text-align:center;padding:25px;" >
-        <a href="/guru-staff" class="btn btn-primary" style="">Lihat Selengkapnya</a>
-      </div>
+        <div class="tombol" style="text-align:center;padding:50px;" >
+          <a href="/guru-staff" class="btn btn-primary" style="">Lihat Selengkapnya</a>
+        </div>
+        </div>
+        
       </div>
     </div>
    

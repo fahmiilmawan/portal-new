@@ -11,7 +11,7 @@
     @method('PUT')
 
     <div class="row">
-        <div class="col-12 col-md-6 col-lg-6">
+        <div class="col-12 col-md-6 col-lg-12">
           <div class="card">
             <div class="card-body">
               <div class="form-group">
@@ -29,15 +29,26 @@
               </div>
               <div class="form-group">
                 <label>Jabatan</label>
-                <input type="text" class="form-control" value="{{ $editAdminGuruStaff->jabatan_guru }}"  name="jabatan_guru">
+                  <input type="text" name="jabatan_guru" class="form-control "value="{{ $editAdminGuruStaff->jabatan_guru }}"readonly></option>
+                </select>
               </div>
               <div class="form-group">
-                <label>Mapel Diampu</label>
-                <input type="text" class="form-control" value="{{ $editAdminGuruStaff->mapel_diampu_guru }}"  name="mapel_diampu_guru">
+                @if($editAdminGuruStaff->jabatan_guru == 'Guru') 
+                  <label>Mapel Diampu</label>
+                  <input type="text" class="form-control" value="{{ $editAdminGuruStaff->mapel_diampu_guru }}" @if($editAdminGuruStaff->jabatan_guru=='Staff')readonly @endif  name="mapel_diampu_guru">
+                @else
+                
+                @endif
               </div>
               <div class="form-group">
                 <label>Jenis Kelamin</label>
-                <input type="text" class="form-control" value="{{ $editAdminGuruStaff->jenis_kelamin_guru }}"  name="jenis_kelamin_guru">
+                <select name="jenis_kelamin_guru" id="" class="form-control" value="{{ $editAdminGuruStaff->jenis_kelamin_guru }}">
+                <option value="L" @if($editAdminGuruStaff->jenis_kelamin_guru == 'L') echo selected @endif
+                  >L</option>
+                  
+                <option value="P" @if($editAdminGuruStaff->jenis_kelamin_guru == 'P') echo selected @endif >
+                  P</option>
+                </select>
               </div>
               <div class="form-group">
                 <label>Biodata</label>

@@ -18,9 +18,9 @@ class CreateGuruTable extends Migration
             $table->integer('nip_guru');
             $table->string('nama_guru');
             $table->string('foto_guru', 255);
-            $table->string('jabatan_guru'); //jabatan termasuk staff dan guru mapel
+            $table->enum('jabatan_guru',['Guru','Staff']); //jabatan termasuk staff dan guru mapel
             $table->string('mapel_diampu_guru', 255, null);
-            $table->string('jenis_kelamin_guru', 100, null);
+            $table->enum('jenis_kelamin_guru',['L','P']);
             $table->text('biodata_guru');
             $table->timestamps();
         });

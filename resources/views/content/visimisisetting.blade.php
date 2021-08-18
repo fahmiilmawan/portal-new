@@ -30,8 +30,8 @@
               <tr>
                 <td>{{ ++$i }}</td>
                 {{-- <td><img src="assets/img/{{ $d->img }}" alt="" srcset="" width="250"></td> --}}
-                <td>{{$d->content}}</td>
-                <td></td>
+                <td>{{$d->visi}}</td>
+                <td>{{$d->misi}}</td>
                 <td>
                     <button class="btn btn-success" data-toggle="modal" data-target="#exampleModal{{$d->id}}">
                       <i class="fas fa-pen"></i>
@@ -70,11 +70,11 @@
           </div> --}}
           <div class="form-group">
             <label>Visi</label>
-            <textarea class="form-control" name="content" id="" cols="50" rows="30"></textarea>
+            <textarea class="form-control" name="visi" id="" cols="50" rows="30"></textarea>
           </div>
           <div class="form-group">
             <label>Misi</label>
-            <textarea class="form-control" name="content" id="" cols="50" rows="30"></textarea>
+            <textarea class="form-control" name="misi" id="" cols="50" rows="30"></textarea>
           </div>
       </div>
       <div class="modal-footer">

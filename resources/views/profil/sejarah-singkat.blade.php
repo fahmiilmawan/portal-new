@@ -1,4 +1,4 @@
-@extends('kompetensi-keahlian.master')
+@extends('master')
 @section('konten')
 <head>
     <style>
@@ -18,7 +18,7 @@
   <div class="latar"style="background-color:#eee;">
     <br>
     <br>
-<div class="container" data-aos="fade-up" style="padding:50px;background-color:white;">
+<div class="container" data-aos="fade-up" style="padding:50px;background-color:white;padding:150px;">
 
     
     <div class="foto" style="text-align: center">

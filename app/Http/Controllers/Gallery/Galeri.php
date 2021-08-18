@@ -8,14 +8,18 @@ use App\Models\Gallery;
 
 class Galeri extends Controller
 {
-    
+    // public function index()
+    // {
+    //     
+    // }
     public function foto(){
-
-        // $foto = DB::table('galeri')->orderby('id', 'desc')->get();
-        $foto = Gallery::orderby('id', 'desc')->get();
-
+        $foto = Gallery::latest()->paginate(5);
         return view('admin.foto', compact('foto'));
+        // $foto = DB::table('galeri')->orderby('id', 'desc')->get();
+        // $foto = Gallery::orderby('id', 'desc')->get();
+        // return view('admin.foto', compact('foto'));
 
     }
+    
 
 }

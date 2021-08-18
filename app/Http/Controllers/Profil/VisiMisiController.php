@@ -16,7 +16,8 @@ class VisiMisiController extends Controller
     public function updateAdminVisiMisi(Request $request, $id)
     {
         $form = Visimisi::find($id);
-        $form->content = $request->content;
+        $form->visi = $request->visi;
+        $form->misi = $request->misi;
         $form->save();
 
         return redirect('/pengaturan-visimisi')->with('success', 'berhasil diubah');

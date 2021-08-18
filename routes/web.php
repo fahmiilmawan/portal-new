@@ -13,6 +13,7 @@ use App\Http\Controllers\Profil\GuruController;
 use App\Http\Controllers\Profil\KompetensiKeahlianController;
 use App\Http\Controllers\Profil\SejarahSingkatController;
 use App\Http\Controllers\Profil\VisiMisiController;
+use App\Http\Controllers\ImageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,9 @@ use App\Http\Controllers\Profil\VisiMisiController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//COBA COBA INTERVENTION IMAGE
+Route::get('/resize-image','App\Http\Controllers\ImageController@resizeImage');
+Route::post('/resize-image','App\Http\Controllers\ImageController@resizeImageSubmit')->name('imageResize');
 // ROUTE HALAMAN INDEX
 Route::get('/', [Portal::class, 'index']);
 Route::get('/galery', [Portal::class, 'showGaleri']);

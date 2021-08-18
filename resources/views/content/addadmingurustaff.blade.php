@@ -30,7 +30,10 @@
               </div>
               <div class="form-group">
                 <label>Jabatan</label>
-                <input type="text" class="form-control" name="jabatan_guru">
+                <select name="jabatan_guru" id="" class="form-control">
+                  <option value="Guru">Guru</option>
+                  <option value="Staff">Staff</option>
+                </select>
               </div>
               <div class="form-group">
                 <label>Mapel Diampu</label>
@@ -38,11 +41,14 @@
               </div>
               <div class="form-group">
                 <label>Jenis Kelamin</label>
-                <input type="text" class="form-control" name="jenis_kelamin_guru">
+                <select name="jenis_kelamin_guru" id="" class="form-control">
+                  <option value="p">P</option>
+                  <option value="L">L</option>
+                </select>
               </div>
               <div class="form-group">
                 <label>Biodata</label>
-                <input type="text" class="form-control" name="biodata_guru">
+                <textarea class="form-control" rows='4' cols='50'name="biodata_guru"></textarea>
               </div>
               <div class="form-group">
                   <button type="submit" class="btn btn-primary">

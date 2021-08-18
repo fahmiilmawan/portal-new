@@ -49,13 +49,28 @@
                 <a href="/foto/{{ $d->id }}/deleteFoto">
                   <button class="btn btn-danger">
                     <i class="fas fa-trash"></i>
+                   
                   </button>
                 </a>
-              </td>
-            </tr>
+              
           @endforeach
+        </td>
+      </tr>
+         
         </tbody>
+       
       </table>
+      <div class="pull-left">
+        Menampilkan
+        {{$foto->firstItem()}}
+        Data dari
+        {{$foto->lastItem()}}
+        Total Data
+        {{$foto->total()}}
+      </div>
+      <div class="d-flex flex-row-reverse">
+        {{$foto->links()}} 
+      </div>
     </div>
   </div>
   

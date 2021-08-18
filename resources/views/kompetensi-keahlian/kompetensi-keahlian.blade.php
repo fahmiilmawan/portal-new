@@ -18,97 +18,192 @@
       <p style="text-align:center;">Kompetensi Keahlian merupakan bagian pokok dari pendidikan dan pelatihan di sebuah Sekolah Menengah Kejuruan (SMK).</p>
     </div>
 
-@foreach($showKKRPL as $rpl)
-    <div class="row">
-      <div class="col-sm-12 col-md-4 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-        <a href="/rekayasa-perangkat-lunak" > <div class="icon-box">
-          <div class="icon" style="text-align: center;padding-bottom: 100px;"><img src="assets/img/logo1.png" width="100px" alt="" srcset=""></i></div>
-          <h4>{{$rpl -> nama_jurusan}}</h4></a>
-          <p style="text-align:justify;"><b>Rekayasa Perangkat Lunak (RPL)</b><br> adalah satu bidang profesi yang mendalami cara-cara pengembangan perangkat lunak termasuk pembuatan, pemeliharaan, manajemen organisasi pengembangan perangkat lunak dan manajemen kualitas</p>
-        </div>
+    {{-- @foreach($showKKRPL as $rpl)
+    <div class="col-sm-3 col-md-3" data-aos="zoom-in" data-aos-delay="100">
+      <a href="/teknik_kendaraan_ringan_otomotif" > <div class="icon-box">
+        <div class="icon" style="text-align: center;margin-bottom: 0px;"><img src="" width="100px" alt="" srcset=""></i></div>
+        <h4>{{$rpl -> nama_jurusan}}</h4></a>
+        <p style="text-align:justify;">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+        
       </div>
-@endforeach
+      @endforeach
+    </div>
+    
 
 @foreach($showKKBDP as $bdp)
-      <div class="col-sm-12 col-md-4 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
-        <a href="/teknik_bisnis_sepeda_motor"><div class="icon-box">
-          <div class="icon" style="text-align: center;margin-bottom: 50px;"><img src="assets/img/logo1.png" width="100px" alt="" srcset=""></i></div>
-          <h4>{{$bdp-> nama_jurusan}}</h4></a>
-          <p style="text-align:justify;"><br><b>Teknik Sepeda Motor </b><br>adalah kompetensi keahlian pada Bidang Studi Keahlian Teknologi dan Rekayasa Program Studi Keahlian Teknik Otomotif yang menekankan pada keterampilan pelayanan jasa mekanik kendaraan sepeda motor roda dua.</p>
-        </div>
-      </div>
-@endforeach
+<div class="col-sm-3 col-md-3 " data-aos="zoom-in" data-aos-delay="100">
+  <a href="/teknik_kendaraan_ringan_otomotif" > <div class="icon-box">
+    <div class="icon" style="text-align: center;margin-bottom: 50px;"><img src="" width="100px" alt="" srcset=""></i></div>
+    <h4>{{$bdp -> nama_jurusan}}</h4></a>
+    <p style="text-align:justify;">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+    
+  </div>
+  @endforeach
+</div>
+
 
 @foreach($showKKTBSM as $tbsm)
-      <div class="col-sm-12 col-md-4 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
-        <a href="/akuntansi"><div class="icon-box">
-          <div class="icon" style="text-align: center;margin-bottom: 50px;"><img src="assets/img/logo1.png" width="100px" alt="" srcset=""></i></div>
-          <h4>{{$tbsm -> nama_jurusan}}</h4></a>
-          <p style="text-align:justify;"><br><br><b>Akuntansi</b><br> adalah pengukuran, penjabaran, atau pemberian kepastian mengenai informasi yang akan membantu manajer, investor, otoritas pajak dan pembuat keputusan lain untuk membuat alokasi sumber daya keputusan di dalam perusahaan, organisasi, dan lembaga pemerintah.</p>
-        </div>
-      </div>
-@endforeach
+<div class="col-sm-3 col-md-3" data-aos="zoom-in" data-aos-delay="100">
+  <a href="/teknik_kendaraan_ringan_otomotif" > <div class="icon-box">
+    <div class="icon" style="text-align: center;margin-bottom: 50px;"><img src="" width="100px" alt="" srcset=""></i></div>
+    <h4>{{$tbsm -> nama_jurusan}}</h4></a>
+    <p style="text-align:justify;">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+    
+  </div>
+  @endforeach
+</div>
+
 
 @foreach($showKKAK as $ak)
-      <div class="col-sm-12 col-md-4 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
-        <a href="/bisnis_daring_pemasaran"><div class="icon-box">
-          <div class="icon" style="text-align: center;margin-bottom: 50px;"><img src="assets/img/logo1.png" width="100px" alt="" srcset=""></i></div>
-          <h4>{{$ak -> nama_jurusan}} </h4></a>
-          <p style="text-align:justify;"><b>Bisnis Daring dan Pemasaran</b><br> adalah sebuah kompetensi keahlian (jurusan) yang mempelajari dasar - dasar kemampuan dan keilmuan menjadi seorang marketing baik marketing secara konvensional maupun melalui media daring (online/internet).</p>
-        </div>
-      </div>
-@endforeach
+<div class="col-sm-3 col-md-3" data-aos="zoom-in" data-aos-delay="100">
+  <a href="/teknik_kendaraan_ringan_otomotif" > <div class="icon-box">
+    <div class="icon" style="text-align: center;margin-bottom: 50px;"><img src="" width="100px" alt="" srcset=""></i></div>
+    <h4>{{$ak -> nama_jurusan}}</h4></a>
+    <p style="text-align:justify;">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+    
+  </div>
+  @endforeach
+</div>
+
 
 @foreach($showKKTKRO as $tkro)
-      <div class="col-sm-12 col-md-4 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
-        <a href="/teknik_kendaraan_ringan_otomotif"><div class="icon-box">
-          <div class="icon" style="text-align: center;margin-bottom: 50px;"><img src="assets/img/logo1.png" width="100px" alt="" srcset=""></i></div>
-          <h4>{{$tkro -> nama_jurusan}} </h4></a>
-          <p style="text-align:justify;"><b>Bisnis Daring dan Pemasaran</b><br> adalah sebuah kompetensi keahlian (jurusan) yang mempelajari dasar - dasar kemampuan dan keilmuan menjadi seorang marketing baik marketing secara konvensional maupun melalui media daring (online/internet).</p>
+<div class="col-sm-3 col-md-3 " data-aos="zoom-in" data-aos-delay="100">
+  <a href="/teknik_kendaraan_ringan_otomotif" > <div class="icon-box">
+    <div class="icon" style="text-align: center;margin-bottom: 50px;"><img src="" width="100px" alt="" srcset=""></i></div>
+    <h4>{{$tkro -> nama_jurusan}}</h4></a>
+    <p style="text-align:justify;">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+    
+  </div>
+  @endforeach
+</div> --}}
+<div class="row">
+  @foreach($showKKRPL as $rpl)
+    
+  
+<div class="col-sm-12 col-md-4" data-aos="zoom-in" data-aos-delay="100">
+<div class="card" style="max-width:400px;">
+  <img class="card-img-top" src="..." alt="Card image cap" style="text-align: center;">
+  <div class="card-body">
+    <a href="/teknik_kendaraan_ringan_otomotif">
+      <div class="judul-jurusan" style="margin:20px;text-align:center;">
+      <h4 class="card-text">{{$rpl -> nama_jurusan}}</h4>
+  </a>
+  </div>
+  <br>
+  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+</div>
+@endforeach
+@foreach($showKKBDP as $bdp)
+  
+
+<div class="col-sm-12 col-md-4" data-aos="zoom-in" data-aos-delay="100">
+  <div class="card" style="max-width:400px;;height:auto;">
+    <img class="card-img-top" src="..." alt="Card image cap" style="text-align: center;">
+    <div class="card-body">
+      <div class="judul-jurusan" style="margin:20px;text-align:center;">
+      <a href="/teknik_kendaraan_ringan_otomotif">
+        <h4 class="card-text">{{$bdp -> nama_jurusan}}</h4>
+    </a>
+      </div>
+    <br>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+  </div>
+  </div>
+  @endforeach
+  @foreach($showKKTBSM as $tbsm)
+    
+ 
+  <div class="col-sm-12 col-md-4" data-aos="zoom-in" data-aos-delay="100">
+    <div class="card" style="max-width:400px;">
+      <img class="card-img-top" src="..." alt="Card image cap" style="text-align: center;">
+      <div class="card-body">
+        <div class="judul-jurusan" style="margin:20px;text-align:center;">
+        <a href="/teknik_kendaraan_ringan_otomotif">
+          <h4 class="card-text">{{$tbsm -> nama_jurusan}}</h4>
+      </a>
+        </div>
+      <br>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      </div>
+    </div>
+    </div>
+  </div>
+    @endforeach
+    <div class="row" style="margin:25px;">
+    @foreach($showKKAK as $ak)
+      
+    
+    <div class="col-sm-12 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card" style="max-width: 400px;">
+        <img class="card-img-top" src="..." alt="Card image cap" style="text-align: center;">
+        <div class="card-body">
+          <div class="judul-jurusan" style="margin:20px;text-align:center;">
+          <a href="/teknik_kendaraan_ringan_otomotif">
+            <h4 class="card-text">{{$ak -> nama_jurusan}}</h4>
+        </a>
+      </div>
+        <br>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         </div>
       </div>
-@endforeach
-    </div>
-
+      </div>
+      @endforeach
+      @foreach($showKKAK as $ak)
+      
+    
+    <div class="col-sm-12 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card" style="max-width: 400px;">
+        <img class="card-img-top" src="..." alt="Card image cap" style="text-align: center;">
+        <div class="card-body">
+          <div class="judul-jurusan" style="margin:20px;text-align:center;">
+          <a href="/teknik_kendaraan_ringan_otomotif">
+            <h4 class="card-text">{{$ak -> nama_jurusan}}</h4>
+        </a>
+          </div>
+        <br>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+      </div>
+      @endforeach
   </div>
+
 </section>
 
 
-      {{-- <div class="row">
-        <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-          <div class="icon-box">
-            <div class="icon" style="text-align: center;margin-bottom: 50px;"><img src="assets/img/logo1.png" width="100px" alt="" srcset=""></i></div>
-            <h4>REKAYASA PERANGKAT LUNAK</h4>
-            <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
-          </div>
-        </div>
+{{-- <div class="col-sm-12 col-md-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+  <a href="/teknik_kendaraan_ringan_otomotif" > <div class="icon-box">
+    <div class="icon" style="text-align: center;margin-bottom: 50px;"><img src="" width="100px" alt="" srcset=""></i></div>
+    <h4>{{$tkro -> nama_jurusan}}</h4></a>
+    <p style="text-align:justify;">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+  </div>
+</div>
 
-        <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
-          <div class="icon-box">
-            <div class="icon" style="text-align: center;margin-bottom: 50px;"><img src="assets/img/logo1.png" width="100px" alt="" srcset=""></i></div>
-            <h4>TEKNIK SEPEDA MOTOR</h4>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
-          </div>
-        </div>
+<div class="col-sm-12 col-md-3 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+  <a href="/ekstrakurikuler2"><div class="icon-box">
+    <div class="icon" style="text-align: center;margin-bottom: 50px;"><img src="assets/img/lppm_ri.png" width="100px" alt="" srcset=""></i></div>
+    <h4>SEPAK BOLA</h4></a>
+    <p style="text-align:justify;">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+  </div>
+</div>
 
-        <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
-          <div class="icon-box">
-            <div class="icon" style="text-align: center;margin-bottom: 50px;"><img src="assets/img/logo1.png" width="100px" alt="" srcset=""></i></div>
-            <h4>AKUNTANSI</h4>
-            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
-          </div>
-        </div>
+<div class="col-sm-12 col-md-3 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
+  <a href="/ekstrakurikuler3"><div class="icon-box">
+    <div class="icon" style="text-align: center;margin-bottom: 50px;"><img src="assets/img/lppm_ri.png" width="100px" alt="" srcset=""></i></div>
+    <h4>TEATER</h4></a>
+    <p style="text-align:justify;">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+  </div>
+</div>
 
-        <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
-          <div class="icon-box">
-            <div class="icon" style="text-align: center;margin-bottom: 50px;"><img src="assets/img/logo1.png" width="100px" alt="" srcset=""></i></div>
-            <h4>PEMASARAN</h4>
-            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
-          </div>
-        </div>
-
-      </div>
-
-    </div> --}}
+<div class="col-sm-12 col-md-3 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
+  <a href="/ekstrakurikuler4"><div class="icon-box">
+    <div class="icon" style="text-align: center;margin-bottom: 50px;"><img src="assets/img/lppm_ri.png" width="100px" alt="" srcset=""></i></div>
+    <h4>PRAMUKA</h4></a>
+    <p style="text-align:justify;">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+  </div>
+</div> --}}
 
 @endsection

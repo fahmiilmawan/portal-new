@@ -70,23 +70,32 @@
     @media only screen and(max-width:575px){
     }
     .carousel-item{
-      height: 32rem;
       position: relative;
       background-color: black;
       background-position: center;
       background-size: cover;
-      
     }
+.carousel-item .display-4{
+      /* margin-top: -50%; */
+    }
+    /* .carousel-item{
+      height: 32rem;
+      position: relative;
+      background-color: black;
+      background-position: center;
+      background-repeat: no-repeat;
+      
+    } */
     .container-carousel{
       position: absolute;
       color: white;
       text-align: center;
-      padding-right: 50px;
-      padding-left: 50px; 
-      top: 100px;
+      padding-right: 0px;
+      padding-left: 0px; 
+      top: 0px;
       left: 0;
       right: 0;
-      padding-bottom: 50px;
+      padding-bottom: 0px;
 
     }
     .container-caption{
@@ -95,17 +104,22 @@
     }
     .overlay-image{
       position: absolute;
+      /* max-width: 100%; */
+      max-height: auto;
+      object-fit: contain;
       bottom: 0;
       left: 0;
       right: 0;
       top: 0;
       background-position: center;
+      background-repeat: no-repeat;
       background-size: cover;
       opacity: 0.5;
     }
-    .h3{
-        
-    }
+    /* #carousel, .item, .slider-image {
+  height: auto;
+  width: 100%;
+} */
         
     
   </style>
@@ -165,30 +179,24 @@
     </ol>
     @foreach ($carousel1 as $a) 
     <div class="carousel-inner">
-      <div class="carousel-item active" data-interval="5000">
-        <div class="overlay-image"style="background-image: url('assets/img/carousel{{$a->gambar}}');">
-        
+      <div class="carousel-item active" data-interval="5000">       
+        <img class="d-block w-100" style="opacity: 0.5;" src="{{ asset('assets/img/carousel/'.$a->gambar) }}">
+        <div class="carousel-caption d-none d-md-block">
+          <h1 class="display-4"><b>{{$a->caption}}</b></h1>
+          <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias autem porro totam dicta nesciunt? Culpa facilis ab incidunt est voluptatibus obcaecati veritatis. Eligendi, vero rem! Id iusto quidem nam aperiam.</p>
         </div>
-         
-        <div class="container-carousel">
-          <img src="{{ asset('assets/img/carousel/'.$a->gambar) }}" class="img-fluid" width="150px"alt="" style="padding-bottom:25px;" data-aos="fade-up">
-        <h2 style="font-size: 50px;" data-aos="fade-up">{{$a->caption}}</h2>   
-    </div>
-     @endforeach
-  </div>
-  @foreach ($carousel2 as $a)
+      </div>
+    @endforeach
+    @foreach ($carousel2 as $a)
     <div class="carousel-item">
-      {{-- <div class="overlay-image"style="background-image: url('assets/img/{{$carousel_->content}}');">
-        
-      </div> --}}
-      
-      <div class="container-carousel">
-        <img src="{{ asset('assets/img/carousel/'.$a->gambar) }}" class="img-fluid" width="150px"alt="" style="padding-bottom:25px;" data-aos="fade-up"> 
-      <h2 style="font-size: 50px;" data-aos="fade-up">{{$a->caption}}</h2>
+        <img class ="d-block w-100" style="opacity: 0.5;" src="{{ asset('assets/img/carousel/'.$a->gambar) }}"> 
+        <div class="carousel-caption d-none d-md-block">
+          <h1 class="display-4"><b>{{$a->caption}}</b></h1>
+          <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias autem porro totam dicta nesciunt? Culpa facilis ab incidunt est voluptatibus obcaecati veritatis. Eligendi, vero rem! Id iusto quidem nam aperiam.</p>
+        </div>
     </div>
-  @endforeach
+    @endforeach
   </div>
-</div>
   <a href="#myCarousel" class="carousel-control-prev" role="button" data-slide="prev">
     <span class="sr-only">Previous</span>
     <span class="carousel-control-prev-icon" aria-hidden="true" ></span>
@@ -197,11 +205,12 @@
     <span class="sr-only">Previous</span>
     <span class="carousel-control-next-icon" aria-hidden="true" ></span>
   </a>
-</div>
+  </div>
 {{-- TAMPILAN PENGUMUMAN  --}}
 <div class="section-title">
   <h2 style="padding:40px;">PENGUMUMAN</h2>
 </div>
+
 
     @foreach ($announce as $a)
     <div class="container" style="" >
@@ -300,7 +309,7 @@ Rd. Neneng Marlina, S.H.,MM
           </div>
           <div class="col-sm-7 col-md-4" style="text-align:center;padding-right:px;">
               
-                <img src="{{ asset('assets/img/kepsek/'.$kepsek->foto_kepsek) }}" alt="" class="img-fluid" width="600px" height="100px">
+                <img src="{{ asset('assets/img/kepsek/'.$kepsek->foto_kepsek) }}" alt="" class="img-fluid" style="max-width:400px;height:auto";>
                 
           </div>
           </div>

@@ -1,4 +1,4 @@
-@extends('kompetensi-keahlian.master')
+@extends('master')
 @section('konten')
 <head>
     <style>
@@ -36,11 +36,14 @@
     </div>
     <div class="kata">
         <h2>VISI</h2>
-        <p>{{$v->content}} </p>
+        <p>{{$v->visi}} </p>
     </div>
+    @endforeach  
+    @foreach($showVisiMisi as $m) 
     <div class="kata">
+
         <h2>MISI</h2>
-        <p>{{$v->content}} </p>
+        <p>{{$m->misi}} </p>
     </div>
     @endforeach    
     

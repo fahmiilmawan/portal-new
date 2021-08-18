@@ -1,4 +1,4 @@
-@extends('kompetensi-keahlian.master')
+@extends('master')
 @section('konten')
 <head>
  <!-- Latest compiled and minified CSS -->

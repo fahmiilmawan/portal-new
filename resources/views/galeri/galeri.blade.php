@@ -1,4 +1,4 @@
-@extends('kompetensi-keahlian.master')
+@extends('master')
 
 @section('konten')
 <head>
@@ -34,14 +34,17 @@
       <div class="col-sm-12 col-md-4">
         <div class="item ">
           <a href="assets\img\galeri\{{$g->content}}" class="fancybox" data-fancybox="galeri1">
-          <img src="assets\img\galeri\{{$g->content}}" alt="" class="img-fluid" style="max-width:400px;">
+          <img src="assets\img\galeri\{{$g->content}}" alt="" class="img-fluid" style="width:400px;height:300px;">
         </a>
         </div>
       </div>    
-    @endforeach
-        
+    @endforeach      
   </div>
 </div>
+
 {{-- END GALERI --}}
+<div class="d-flex justify-content-center">
+{{$galeri ->links()}}
+</div>
     
 @endsection

@@ -19,4 +19,6 @@ class Guru extends Model
         'jenis_kelamin_guru',
         'biodata_guru',
     ];
+   
+
 }

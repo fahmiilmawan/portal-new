@@ -79,73 +79,90 @@
                       </li>
                     </ul>
                   </li>
-                <li class="nav-item dropdown {{ (request()->is('artikel') ? 'active' : '') }} {{ (request()->is('tambah-artikel') ? 'active' : '') }}">
+                  <li class="{{ (request()->is('adminsejarahsingkat') ? 'active' : '') }} {{ (request()->is('pengaturan-visimisi') ? 'active' : '') }}
+                    {{ (request()->is('adminkompetensikeahlian') ? 'active' : '') }} {{ (request()->is('gurustaff') ? 'active' : '') }}
+                    {{ (request()->is('ekstrakulikuler') ? 'active' : '') }}">
+                    <a class="nav-link has-dropdown" href=""><i class="fas fa-cogs"></i> 
+                      <span>Profil Sekolah</span></a>
+                      <ul class="dropdown-menu">
+                        <li class="{{ (request()->is('adminsejarahsingkat') ? 'active' : '') }}">
+                          <a class="nav-link" href="/adminsejarahsingkat">Sejarah Singkat</a>
+                        </li>
+                        <li class="{{ (request()->is('pengaturan-visimisi') ? 'active' : '') }}">
+                          <a class="nav-link" href="/pengaturan-visimisi">Visi & Misi</a>
+                        </li>
+                        <li class="{{ (request()->is('adminkompetensikeahlian') ? 'active' : '') }}">
+                          <a class="nav-link" href="/adminkompetensikeahlian">Kompetensi Keahlian</a>
+                        </li>
+                        <li class="{{ (request()->is('gurustaff') ? 'active' : '') }}">
+                          <a class="nav-link" href="/admingurustaff">Guru & Staff</a>
+                        </li>
+                        <li class="{{ (request()->is('ekstrakulikuler') ? 'active' : '') }}">
+                          <a class="nav-link" href="/adminekstrakulikuler">Ekstrakulikuler</a>
+                        </li>
+                      </ul>
+                </li>   
+                  <li class="{{ (request()->is('artikel') ? 'active' : '') }}">
+                    <a class="nav-link" href="/artikel"><i class="fas fa-file-alt"></i> 
+                      <span>Artikel</span></a>
+                    </li>
+                {{-- <li class="nav-item dropdown {{ (request()->is('artikel') ? 'active' : '') }} {{ (request()->is('tambah-artikel') ? 'active' : '') }}">
                   <a class="nav-link has-dropdown" href=""><i class="far fa-file-alt"></i> 
                     <span>Artikel</span></a>
                     <ul class="dropdown-menu">
                       <li class="{{ (request()->is('artikel') ? 'active' : '') }}"><a class="nav-link" href="/artikel">List Artikel</a></li>
                       <li class="{{ (request()->is('tambah-artikel') ? 'active' : '') }}"><a class="nav-link" href="/tambah-artikel">Tambah Artikel</a></li>
                     </ul>
-                  </li>
-                <li class="{{ (request()->is('tags') ? 'active' : '') }} {{ (request()->is('tambah-tags') ? 'active' : '') }}">
+                  </li> --}}
+                {{-- <li class="{{ (request()->is('tags') ? 'active' : '') }} {{ (request()->is('tambah-tags') ? 'active' : '') }}">
                   <a class="nav-link has-dropdown" href=""><i class="fas fa-tags"></i> 
                     <span>Tags</span></a>
                     <ul class="dropdown-menu">
                       <li class="{{ (request()->is('tags') ? 'active' : '') }}">
                         <a class="nav-link" href="/tags">List Tags</a>
-                      </li>
-                      <li class="{{ (request()->is('tambah-tags') ? 'active' : '') }}">
+                      </li> --}}
+                      {{-- <li class="{{ (request()->is('tambah-tags') ? 'active' : '') }}">
                         <a class="nav-link" href="/tambah-tags">Tambah Tags</a>
-                      </li>
-                    </ul>
-                  </li>
+                      </li> --}}
+                      <li class="{{ (request()->is('tags') ? 'active' : '') }}">
+                        <a class="nav-link" href="/tags"><i class="fas fa-tags"></i> 
+                          <span>Tags</span></a>
+                        </li>
+                    {{-- </ul> --}}
+                  {{-- </li>
                   <li class="{{ (request()->is('foto') ? 'active' : '') }} {{ (request()->is('tambah-foto') ? 'active' : '') }}">
                   <a class="nav-link has-dropdown" href="/foto"><i class="far fa-images"></i></i> 
                     <span>Foto</span></a>
                     <ul class="dropdown-menu">
                       <li class="{{ (request()->is('foto') ? 'active' : '') }}">
                         <a class="nav-link" href="/foto">List Foto</a>
-                      </li>
-                      <li class="{{ (request()->is('tambah-foto') ? 'active' : '') }}">
+                      </li> --}}
+                      {{-- <li class="{{ (request()->is('tambah-foto') ? 'active' : '') }}">
                         <a class="nav-link" href="/tambah-foto">Tambah Foto</a>
-                      </li>
-                    </ul>
-                  </li>
+                      </li> --}}
+                      <li class="{{ (request()->is('foto') ? 'active' : '') }}">
+                        <a class="nav-link" href="/foto"><i class="fas fa-images"></i> 
+                          <span>Foto</span></a>
+                        </li>
+                    {{-- </ul> --}}
+                  {{-- </li>
                   <li class="{{ (request()->is('admin') ? 'active' : '') }} {{ (request()->is('tambah-admin') ? 'active' : '') }}">
                     <a class="nav-link has-dropdown" href=""><i class="fas fa-user-cog"></i> 
                       <span>Admin</span></a>
                       <ul class="dropdown-menu">
                         <li class="{{ (request()->is('admin') ? 'active' : '') }}">
                           <a class="nav-link" href="/admin">List Admin</a>
-                        </li>
-                        <li class="{{ (request()->is('tambah-admin') ? 'active' : '') }}">
+                        </li> --}}
+                        {{-- <li class="{{ (request()->is('tambah-admin') ? 'active' : '') }}">
                           <a class="nav-link" href="/tambah-admin">Tambah Admin</a>
+                        </li> --}}
+                      {{-- </ul> --}}
+                      <li class="{{ (request()->is('admin') ? 'active' : '') }}">
+                        <a class="nav-link" href="/admin"><i class="fas fa-user-cog"></i> 
+                          <span>Admin</span></a>
                         </li>
-                      </ul>
                     </li>
-                      <li class="{{ (request()->is('adminsejarahsingkat') ? 'active' : '') }} {{ (request()->is('pengaturan-visimisi') ? 'active' : '') }}
-                        {{ (request()->is('adminkompetensikeahlian') ? 'active' : '') }} {{ (request()->is('gurustaff') ? 'active' : '') }}
-                        {{ (request()->is('ekstrakulikuler') ? 'active' : '') }}">
-                        <a class="nav-link has-dropdown" href=""><i class="fas fa-cogs"></i> 
-                          <span>Profil Sekolah</span></a>
-                          <ul class="dropdown-menu">
-                            <li class="{{ (request()->is('adminsejarahsingkat') ? 'active' : '') }}">
-                              <a class="nav-link" href="/adminsejarahsingkat">Sejarah Singkat</a>
-                            </li>
-                            <li class="{{ (request()->is('pengaturan-visimisi') ? 'active' : '') }}">
-                              <a class="nav-link" href="/pengaturan-visimisi">Visi & Misi</a>
-                            </li>
-                            <li class="{{ (request()->is('adminkompetensikeahlian') ? 'active' : '') }}">
-                              <a class="nav-link" href="/adminkompetensikeahlian">Kompetensi Keahlian</a>
-                            </li>
-                            <li class="{{ (request()->is('gurustaff') ? 'active' : '') }}">
-                              <a class="nav-link" href="/admingurustaff">Guru & Staff</a>
-                            </li>
-                            <li class="{{ (request()->is('ekstrakulikuler') ? 'active' : '') }}">
-                              <a class="nav-link" href="/adminekstrakulikuler">Ekstrakulikuler</a>
-                            </li>
-                          </ul>
-                    </li>   
+                      
 
               
                 
